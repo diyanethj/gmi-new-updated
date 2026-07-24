@@ -1,0 +1,24 @@
+[24-Jul-2026 23:01:04 Asia/Colombo] PHP Deprecated:  ini_set(): session.sid_length INI setting is deprecated in /mnt/data/gmg-events-mvc/app/Core/Session.php on line 26
+[24-Jul-2026 23:01:04 Asia/Colombo] PHP Deprecated:  ini_set(): session.sid_bits_per_character INI setting is deprecated in /mnt/data/gmg-events-mvc/app/Core/Session.php on line 27
+[24-Jul-2026 23:01:04 Asia/Colombo] [2026-07-24T23:01:04+05:30] Call to undefined function mb_strlen() in /mnt/data/gmg-events-mvc/app/helpers.php:106
+#0 /mnt/data/gmg-events-mvc/app/Views/public/events.php(506): excerpt()
+#1 /tmp/render_events.php(6): require('...')
+#2 {main}
+
+[24-Jul-2026 23:01:04 Asia/Colombo] PHP Deprecated:  ini_set(): session.sid_length INI setting is deprecated in /mnt/data/gmg-events-mvc/app/Core/Session.php on line 26
+[24-Jul-2026 23:01:04 Asia/Colombo] PHP Deprecated:  ini_set(): session.sid_bits_per_character INI setting is deprecated in /mnt/data/gmg-events-mvc/app/Core/Session.php on line 27
+[24-Jul-2026 23:02:20 Asia/Colombo] PHP Deprecated:  ini_set(): session.sid_length INI setting is deprecated in /mnt/data/gmg-events-mvc/app/Core/Session.php on line 26
+[24-Jul-2026 23:02:20 Asia/Colombo] PHP Deprecated:  ini_set(): session.sid_bits_per_character INI setting is deprecated in /mnt/data/gmg-events-mvc/app/Core/Session.php on line 27
+[24-Jul-2026 23:02:20 Asia/Colombo] PHP Fatal error:  Uncaught Error: Call to undefined function Gmg\Events\Core\mb_strlen() in /mnt/data/gmg-events-mvc/app/Core/Validator.php:19
+Stack trace:
+#0 Command line code(1): Gmg\Events\Core\Validator::event()
+#1 {main}
+  thrown in /mnt/data/gmg-events-mvc/app/Core/Validator.php on line 19
+[24-Jul-2026 23:02:40 Asia/Colombo] PHP Deprecated:  ini_set(): session.sid_length INI setting is deprecated in /mnt/data/gmg-events-mvc/app/Core/Session.php on line 26
+[24-Jul-2026 23:02:40 Asia/Colombo] PHP Deprecated:  ini_set(): session.sid_bits_per_character INI setting is deprecated in /mnt/data/gmg-events-mvc/app/Core/Session.php on line 27
+[24-Jul-2026 23:03:17 Asia/Colombo] PHP Deprecated:  ini_set(): session.sid_length INI setting is deprecated in /mnt/data/gmg-events-mvc/app/Core/Session.php on line 26
+[24-Jul-2026 23:03:17 Asia/Colombo] PHP Deprecated:  ini_set(): session.sid_bits_per_character INI setting is deprecated in /mnt/data/gmg-events-mvc/app/Core/Session.php on line 27
+[24-Jul-2026 23:03:29 Asia/Colombo] PHP Deprecated:  ini_set(): session.sid_length INI setting is deprecated in /mnt/data/gmg-events-mvc/app/Core/Session.php on line 26
+[24-Jul-2026 23:03:29 Asia/Colombo] PHP Deprecated:  ini_set(): session.sid_bits_per_character INI setting is deprecated in /mnt/data/gmg-events-mvc/app/Core/Session.php on line 27
+[24-Jul-2026 23:03:29 Asia/Colombo] PHP Deprecated:  ini_set(): session.sid_length INI setting is deprecated in /mnt/data/gmg-events-mvc/app/Core/Session.php on line 26
+[24-Jul-2026 23:03:29 Asia/Colombo] PHP Deprecated:  ini_set(): session.sid_bits_per_character INI setting is deprecated in /mnt/data/gmg-events-mvc/app/Core/Session.php on line 27
