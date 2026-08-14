@@ -1,0 +1,19 @@
+<?php $isEdit = is_array($vacancy); ?>
+<div class="panel">
+    <div class="panel-head"><div><h2><?= $isEdit ? 'Edit Vacancy' : 'Create Vacancy' ?></h2><div class="hint">Enter each responsibility and qualification on a separate line for a clean public list.</div></div><a class="btn btn-secondary" href="<?= e(admin_url('careers-vacancies')) ?>">Back to Vacancies</a></div>
+    <div class="panel-body">
+        <form method="post" action="<?= e(admin_url($isEdit ? 'careers-vacancies-update' : 'careers-vacancies-store')) ?>">
+            <?= csrf_field() ?><?php if ($isEdit): ?><input type="hidden" name="id" value="<?= e($vacancy['id']) ?>"><?php endif; ?>
+            <div class="form-grid">
+                <div class="field"><label for="company">Group</label><select id="company" name="company" required><?php $companyGroup = old('company', $vacancy['company'] ?? 'GMG'); ?><option value="GMG" <?= $companyGroup === 'GMG' ? 'selected' : '' ?>>GMG</option><option value="GMS" <?= $companyGroup === 'GMS' ? 'selected' : '' ?>>GMS</option></select><?php foreach(errors('company') as $message): ?><div class="field-error"><?= e($message) ?></div><?php endforeach; ?></div>
+                <div class="field"><label for="company_name">Company name</label><input id="company_name" name="company_name" maxlength="180" required value="<?= e(old('company_name', $vacancy['company_name'] ?? '')) ?>" placeholder="Example: Global Marine Services"><div class="hint">Enter the exact company that is recruiting.</div><?php foreach(errors('company_name') as $message): ?><div class="field-error"><?= e($message) ?></div><?php endforeach; ?></div>
+                <div class="field"><label for="position">Position</label><input id="position" name="position" maxlength="180" required value="<?= e(old('position', $vacancy['position'] ?? '')) ?>"><?php foreach(errors('position') as $message): ?><div class="field-error"><?= e($message) ?></div><?php endforeach; ?></div>
+                <div class="field"><label for="status">Status</label><select id="status" name="status"><option value="active" <?= old('status', $vacancy['status'] ?? 'active') === 'active' ? 'selected' : '' ?>>Active</option><option value="inactive" <?= old('status', $vacancy['status'] ?? '') === 'inactive' ? 'selected' : '' ?>>Inactive</option></select></div>
+                <div class="field"><label for="sort_order">Display order</label><input id="sort_order" name="sort_order" type="number" min="1" max="9999" required value="<?= e(old('sort_order', $vacancy['sort_order'] ?? '1')) ?>"><?php foreach(errors('sort_order') as $message): ?><div class="field-error"><?= e($message) ?></div><?php endforeach; ?></div>
+                <div class="field full"><label for="responsibilities">Responsibilities</label><textarea id="responsibilities" name="responsibilities" required><?= e(old('responsibilities', $vacancy['responsibilities'] ?? '')) ?></textarea><div class="hint">One responsibility per line.</div><?php foreach(errors('responsibilities') as $message): ?><div class="field-error"><?= e($message) ?></div><?php endforeach; ?></div>
+                <div class="field full"><label for="qualifications">Qualifications</label><textarea id="qualifications" name="qualifications" required><?= e(old('qualifications', $vacancy['qualifications'] ?? '')) ?></textarea><div class="hint">One qualification per line.</div><?php foreach(errors('qualifications') as $message): ?><div class="field-error"><?= e($message) ?></div><?php endforeach; ?></div>
+            </div>
+            <div class="form-actions"><button class="btn btn-primary" type="submit"><i class="fas fa-floppy-disk"></i><?= $isEdit ? 'Update Vacancy' : 'Create Vacancy' ?></button><a class="btn btn-secondary" href="<?= e(admin_url('careers-vacancies')) ?>">Cancel</a></div>
+        </form>
+    </div>
+</div>

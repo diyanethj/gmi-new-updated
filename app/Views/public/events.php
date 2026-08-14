@@ -23,7 +23,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link crossorigin="" href="https://cdnjs.cloudflare.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"/>
 <link rel="preload" as="image" href="https://images.pexels.com/photos/8761325/pexels-photo-8761325.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920&amp;h=900&amp;fit=crop" fetchpriority="high"/>
 <script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script><style>
@@ -45,7 +45,7 @@ body {
     overflow-x: hidden;
     background: var(--gmi-surface);
     color: #102033;
-    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
     -webkit-font-smoothing: antialiased;
 }
 ::selection { color: #fff; background: #20366C; }
@@ -446,6 +446,306 @@ body.gmi-loading {
     .gmi-custom-header, .gmi-header-left .logo-img, .gmi-hamburger span { transition: none !important; }
 }
 </style>
+
+<style id="gmi-index-typography-match">
+/* =========================================================
+   INDEX.PHP TYPOGRAPHY MATCH
+   EB GARAMOND + SAME LARGE FONT SCALE
+   ========================================================= */
+
+body,
+button,
+input,
+select,
+textarea,
+a,
+p,
+span,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+}
+
+/* Preserve Font Awesome icon fonts */
+.fa,
+.fas,
+.far,
+.fal,
+.fab,
+.fa-solid,
+.fa-regular,
+.fa-brands {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+}
+
+body {
+    font-size: 18px !important;
+    line-height: 1.7 !important;
+}
+
+/* Header */
+.gmi-nav-buttons > a:not(.gmi-quote-btn) {
+    font-size: 17px !important;
+}
+
+.gmi-nav-buttons a.gmi-quote-btn {
+    font-size: 15px !important;
+}
+
+.gmi-nav-mobile a {
+    font-size: 19px !important;
+}
+
+/* Breadcrumb */
+.breadcrumb-eyebrow {
+    font-size: .88rem !important;
+}
+
+.breadcrumb-title {
+    font-size: clamp(2.7rem, 4.2vw, 4.35rem) !important;
+    line-height: 1.08 !important;
+}
+
+.breadcrumb-ul li {
+    font-size: 1rem !important;
+}
+
+/* Main Events heading */
+.section-eyebrow {
+    font-size: 1rem !important;
+}
+
+.section-heading h1 {
+    font-size: clamp(2.65rem, 4vw, 3.8rem) !important;
+    line-height: 1.08 !important;
+}
+
+.section-heading p {
+    max-width: 820px !important;
+    font-size: 1.12rem !important;
+    line-height: 1.75 !important;
+}
+
+/* Event cards - same scale as updated index.php latest events */
+.event-content h3 {
+    font-size: 23px !important;
+    line-height: 1.42 !important;
+}
+
+.event-meta,
+.event-meta a {
+    font-size: 15px !important;
+}
+
+.event-meta i {
+    font-size: 14px !important;
+}
+
+.event-excerpt p {
+    font-size: 17px !important;
+    line-height: 1.8 !important;
+}
+
+.event-content .read-more {
+    font-size: 15px !important;
+}
+
+.event-content .read-more i {
+    font-size: 13px !important;
+}
+
+/* Footer */
+.footer-heading-responsive {
+    font-size: 1.38rem !important;
+}
+
+.footer-link-responsive,
+.footer-contact-responsive {
+    font-size: 1.12rem !important;
+}
+
+.footer-great-text p {
+    font-size: 1rem !important;
+}
+
+.footer-bottom-responsive,
+.footer-bottom-links-responsive a,
+.footer-bottom-text {
+    font-size: 1rem !important;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+    body {
+        font-size: 17px !important;
+    }
+
+    .breadcrumb-title {
+        font-size: clamp(2.4rem, 5vw, 3.55rem) !important;
+    }
+
+    .section-heading h1 {
+        font-size: clamp(2.3rem, 5vw, 3.25rem) !important;
+    }
+
+    .section-heading p {
+        font-size: 1.08rem !important;
+    }
+
+    .event-content h3 {
+        font-size: 21px !important;
+    }
+
+    .event-meta,
+    .event-meta a {
+        font-size: 14.5px !important;
+    }
+
+    .event-excerpt p {
+        font-size: 16.5px !important;
+    }
+
+    .event-content .read-more {
+        font-size: 14.5px !important;
+    }
+
+    .footer-heading-responsive {
+        font-size: 1.28rem !important;
+    }
+
+    .footer-link-responsive,
+    .footer-contact-responsive {
+        font-size: 1.06rem !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    body {
+        font-size: 16.5px !important;
+    }
+
+    .gmi-nav-mobile a {
+        font-size: 18px !important;
+    }
+
+    .breadcrumb-eyebrow {
+        font-size: .78rem !important;
+    }
+
+    .breadcrumb-title {
+        font-size: clamp(2.15rem, 7.6vw, 3rem) !important;
+    }
+
+    .breadcrumb-ul li {
+        font-size: .95rem !important;
+    }
+
+    .section-eyebrow {
+        font-size: .9rem !important;
+    }
+
+    .section-heading h1 {
+        font-size: clamp(2rem, 7.5vw, 2.8rem) !important;
+    }
+
+    .section-heading p {
+        font-size: 1.02rem !important;
+        line-height: 1.7 !important;
+    }
+
+    .event-content h3 {
+        font-size: 20px !important;
+    }
+
+    .event-meta,
+    .event-meta a {
+        font-size: 14px !important;
+    }
+
+    .event-meta i {
+        font-size: 13px !important;
+    }
+
+    .event-excerpt p {
+        font-size: 16px !important;
+    }
+
+    .event-content .read-more {
+        font-size: 14px !important;
+    }
+
+    .event-content .read-more i {
+        font-size: 12px !important;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+    body {
+        font-size: 16px !important;
+    }
+
+    .breadcrumb-eyebrow {
+        font-size: .72rem !important;
+    }
+
+    .breadcrumb-title {
+        font-size: 2rem !important;
+    }
+
+    .breadcrumb-ul li {
+        font-size: .9rem !important;
+    }
+
+    .section-heading h1 {
+        font-size: 2.15rem !important;
+    }
+
+    .section-heading p {
+        font-size: .98rem !important;
+    }
+
+    .event-content h3 {
+        font-size: 19px !important;
+    }
+
+    .event-meta,
+    .event-meta a {
+        font-size: 13.5px !important;
+    }
+
+    .event-excerpt p {
+        font-size: 15.5px !important;
+    }
+
+    .event-content .read-more {
+        font-size: 13.5px !important;
+    }
+
+    .footer-heading-responsive {
+        font-size: 1.2rem !important;
+    }
+
+    .footer-link-responsive,
+    .footer-contact-responsive {
+        font-size: 1rem !important;
+    }
+
+    .footer-bottom-responsive,
+    .footer-bottom-links-responsive a,
+    .footer-bottom-text {
+        font-size: .92rem !important;
+    }
+}
+</style>
+
 </head>
 <body class="gmi-loading">
 <div id="loader-wrapper" style="background:#071525;">
@@ -468,7 +768,6 @@ body.gmi-loading {
 <a aria-current="page" class="gmi-current" href="events.php">Events</a>
 <a href="careers.php">Careers</a>
 <a href="contact-us.php">Contact Us</a>
-<a class="gmi-quote-btn" href="contact-us.php">Get a Quote <i aria-hidden="true" class="fas fa-arrow-right"></i></a>
 </nav>
 <button aria-controls="gmiNavMobile" aria-expanded="false" aria-label="Toggle navigation" class="gmi-hamburger" onclick="toggleMobileNav()" type="button">
 <span></span><span></span><span></span>

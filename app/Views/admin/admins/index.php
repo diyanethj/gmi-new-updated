@@ -1,11 +1,21 @@
+<?php use Gmg\Events\Core\Auth; ?>
 <div class="panel">
-    <div class="panel-head"><div><h2>Create Administrator</h2><div class="hint">Only super administrators can access this section.</div></div></div>
-    <div class="panel-body"><form method="post" action="<?= e(admin_url('admins-store')) ?>"><?= csrf_field() ?><div class="form-grid">
-        <div class="field"><label for="username">Username</label><input id="username" name="username" maxlength="50" required value="<?= e(old('username')) ?>"><?php foreach(errors('username') as $message): ?><div class="field-error"><?= e($message) ?></div><?php endforeach; ?></div>
-        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" maxlength="190" required value="<?= e(old('email')) ?>"><?php foreach(errors('email') as $message): ?><div class="field-error"><?= e($message) ?></div><?php endforeach; ?></div>
-        <div class="field"><label for="password">Password</label><input id="password" name="password" type="password" required autocomplete="new-password"><?php foreach(errors('password') as $message): ?><div class="field-error"><?= e($message) ?></div><?php endforeach; ?><div class="hint">At least 12 characters with uppercase, lowercase, number and symbol.</div></div>
-        <div class="field"><label for="password_confirmation">Confirm password</label><input id="password_confirmation" name="password_confirmation" type="password" required autocomplete="new-password"><?php foreach(errors('password_confirmation') as $message): ?><div class="field-error"><?= e($message) ?></div><?php endforeach; ?></div>
-        <div class="field"><label for="role">Role</label><select id="role" name="role"><option value="admin" <?= old('role','admin') === 'admin' ? 'selected' : '' ?>>Admin — manage events</option><option value="super_admin" <?= old('role') === 'super_admin' ? 'selected' : '' ?>>Super Admin — manage events and admins</option></select></div>
-    </div><div class="form-actions"><button class="btn btn-primary" type="submit"><i class="fas fa-user-plus"></i>Create Administrator</button></div></form></div>
+    <div class="panel-head">
+        <div><h2>Administrators</h2><div class="hint">Permission-based access controls which sidebar pages and action buttons each administrator can use.</div></div>
+        <?php if (Auth::can('admins.create')): ?><a class="btn btn-primary" href="<?= e(admin_url('admins-create')) ?>"><i class="fas fa-user-plus"></i>Create Administrator</a><?php endif; ?>
+    </div>
+    <div class="table-wrap"><table><thead><tr><th>Username</th><th>Email</th><th>Role</th><th>Status</th><th>Permissions</th><th>Created by</th><th>Last login</th><th></th></tr></thead><tbody>
+    <?php if ($admins === []): ?><tr><td colspan="8" class="empty">No manageable administrators found.</td></tr><?php endif; ?>
+    <?php foreach ($admins as $admin): ?><tr>
+        <td><strong><?= e($admin['username']) ?></strong></td><td><?= e($admin['email']) ?></td>
+        <td><?= e(ucwords(str_replace('_',' ',$admin['role']))) ?></td>
+        <td><span class="status status-<?= (int)$admin['is_active'] === 1 ? 'active' : 'inactive' ?>"><?= (int)$admin['is_active'] === 1 ? 'Active' : 'Inactive' ?></span></td>
+        <td><?= $admin['role'] === 'super_admin' ? 'All permissions' : e(count($admin['permissions'])) . ' assigned' ?></td>
+        <td><?= e($admin['creator_username'] ?: 'System') ?></td><td><?= e($admin['last_login_at'] ?: 'Never') ?></td>
+        <td><div class="actions">
+            <?php if (Auth::can('admins.edit')): ?><a class="btn btn-secondary btn-small" href="<?= e(admin_url('admins-edit',['id'=>$admin['id']])) ?>"><i class="fas fa-pen"></i>Edit</a><?php endif; ?>
+            <?php if (Auth::can('admins.delete') && (int)$admin['id'] !== (int)Auth::id()): ?><form method="post" action="<?= e(admin_url('admins-delete')) ?>" onsubmit="return confirm('Delete this administrator?')"><?= csrf_field() ?><input type="hidden" name="id" value="<?= e($admin['id']) ?>"><button class="btn btn-danger btn-small" type="submit"><i class="fas fa-trash"></i>Delete</button></form><?php endif; ?>
+        </div></td>
+    </tr><?php endforeach; ?>
+    </tbody></table></div>
 </div>
-<div class="panel"><div class="panel-head"><h2>Administrators</h2></div><div class="table-wrap"><table><thead><tr><th>Username</th><th>Email</th><th>Role</th><th>Last login</th><th>Created</th><th></th></tr></thead><tbody><?php foreach($admins as $admin): ?><tr><td><strong><?= e($admin['username']) ?></strong></td><td><?= e($admin['email']) ?></td><td><?= e(ucwords(str_replace('_',' ',$admin['role']))) ?></td><td><?= e($admin['last_login_at'] ?: 'Never') ?></td><td><?= e($admin['created_at']) ?></td><td><?php if ((int)$admin['id'] !== (int)\Gmg\Events\Core\Auth::id()): ?><form method="post" action="<?= e(admin_url('admins-delete')) ?>" onsubmit="return confirm('Delete this administrator?')"><?= csrf_field() ?><input type="hidden" name="id" value="<?= e($admin['id']) ?>"><button class="btn btn-danger btn-small" type="submit"><i class="fas fa-trash"></i>Delete</button></form><?php else: ?><span class="hint">Current account</span><?php endif; ?></td></tr><?php endforeach; ?></tbody></table></div></div>

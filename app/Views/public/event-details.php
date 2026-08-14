@@ -33,7 +33,7 @@ $slideshowImages = array_merge([$mainImage], $galleryImages);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="preload" as="image" href="<?php echo e($mainImage); ?>" fetchpriority="high">
     <script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
@@ -57,7 +57,7 @@ body {
     overflow-x: hidden;
     background: var(--gmi-surface);
     color: #102033;
-    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
     -webkit-font-smoothing: antialiased;
 }
 ::selection { color: #fff; background: #20366C; }
@@ -420,6 +420,373 @@ body.event-modal-open { overflow: hidden !important; }
     .event-gallery-button { opacity: 1 !important; transform: none !important; }
 }
 </style>
+
+<style id="gmi-event-details-index-font-match">
+/* =========================================================
+   EVENT DETAILS PAGE
+   EB GARAMOND + SAME LARGE TYPOGRAPHY AS INDEX.PHP
+   ========================================================= */
+
+/* Global font */
+body,
+button,
+input,
+select,
+textarea,
+a,
+p,
+span,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+small,
+strong {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+}
+
+/* Preserve Font Awesome */
+.fa,
+.fas,
+.far,
+.fal,
+.fab,
+.fa-solid,
+.fa-regular {
+    font-family: "Font Awesome 6 Free" !important;
+}
+
+.fab,
+.fa-brands {
+    font-family: "Font Awesome 6 Brands" !important;
+}
+
+/* Base page size */
+body {
+    font-size: 18px !important;
+    line-height: 1.7 !important;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.gmi-nav-buttons > a:not(.gmi-quote-btn) {
+    font-size: 17px !important;
+}
+
+.gmi-nav-buttons a.gmi-quote-btn {
+    font-size: 15px !important;
+}
+
+.gmi-nav-mobile a {
+    font-size: 19px !important;
+}
+
+
+/* =========================================================
+   BREADCRUMB
+   ========================================================= */
+
+.breadcrumb-eyebrow {
+    font-size: .88rem !important;
+    letter-spacing: 2px !important;
+}
+
+.breadcrumb-title {
+    font-size: clamp(2.7rem, 4.2vw, 4.35rem) !important;
+    line-height: 1.08 !important;
+}
+
+.breadcrumb-ul li,
+.breadcrumb-ul li a {
+    font-size: 1rem !important;
+}
+
+
+/* =========================================================
+   EVENT DETAILS CARD
+   ========================================================= */
+
+.event-eyebrow {
+    font-size: 1rem !important;
+    letter-spacing: 1.8px !important;
+}
+
+.event-info-card h1 {
+    font-size: clamp(2.35rem, 3.8vw, 3.5rem) !important;
+    line-height: 1.12 !important;
+    letter-spacing: -1px !important;
+}
+
+.event-meta-copy small {
+    font-size: .92rem !important;
+    letter-spacing: .7px !important;
+}
+
+.event-meta-copy strong {
+    font-size: 1.08rem !important;
+    line-height: 1.45 !important;
+}
+
+.event-meta-icon {
+    flex-basis: 42px !important;
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 1rem !important;
+}
+
+.event-description p {
+    font-size: 1.12rem !important;
+    line-height: 1.8 !important;
+}
+
+.event-back-link {
+    font-size: 1rem !important;
+}
+
+.event-main-view {
+    font-size: .95rem !important;
+}
+
+
+/* =========================================================
+   GALLERY
+   ========================================================= */
+
+.section-eyebrow {
+    font-size: 1rem !important;
+}
+
+.section-heading h2 {
+    font-size: clamp(2.65rem, 4vw, 3.8rem) !important;
+    line-height: 1.08 !important;
+}
+
+.section-heading p {
+    max-width: 820px !important;
+    font-size: 1.12rem !important;
+    line-height: 1.75 !important;
+}
+
+
+/* =========================================================
+   LIGHTBOX
+   ========================================================= */
+
+.event-lightbox-counter {
+    font-size: .95rem !important;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer-heading-responsive {
+    font-size: 1.38rem !important;
+}
+
+.footer-link-responsive,
+.footer-contact-responsive {
+    font-size: 1.12rem !important;
+}
+
+.footer-great-text p {
+    font-size: 1rem !important;
+}
+
+.footer-bottom-responsive,
+.footer-bottom-links-responsive a,
+.footer-bottom-text {
+    font-size: 1rem !important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 992px) {
+    body {
+        font-size: 17px !important;
+    }
+
+    .breadcrumb-title {
+        font-size: clamp(2.4rem, 5vw, 3.55rem) !important;
+    }
+
+    .event-info-card h1 {
+        font-size: clamp(2.15rem, 4.8vw, 3rem) !important;
+    }
+
+    .event-description p {
+        font-size: 1.08rem !important;
+    }
+
+    .section-heading h2 {
+        font-size: clamp(2.3rem, 5vw, 3.25rem) !important;
+    }
+
+    .section-heading p {
+        font-size: 1.08rem !important;
+    }
+
+    .footer-heading-responsive {
+        font-size: 1.28rem !important;
+    }
+
+    .footer-link-responsive,
+    .footer-contact-responsive {
+        font-size: 1.06rem !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+    body {
+        font-size: 16.5px !important;
+    }
+
+    .gmi-nav-mobile a {
+        font-size: 18px !important;
+    }
+
+    .breadcrumb-eyebrow {
+        font-size: .78rem !important;
+    }
+
+    .breadcrumb-title {
+        font-size: clamp(2.15rem, 7.6vw, 3rem) !important;
+    }
+
+    .breadcrumb-ul li,
+    .breadcrumb-ul li a {
+        font-size: .95rem !important;
+    }
+
+    .event-info-card h1 {
+        font-size: clamp(2rem, 7vw, 2.7rem) !important;
+    }
+
+    .event-eyebrow {
+        font-size: .9rem !important;
+    }
+
+    .event-meta-copy small {
+        font-size: .85rem !important;
+    }
+
+    .event-meta-copy strong {
+        font-size: 1rem !important;
+    }
+
+    .event-description p {
+        font-size: 1.02rem !important;
+    }
+
+    .event-back-link {
+        font-size: .98rem !important;
+    }
+
+    .event-main-view {
+        font-size: .88rem !important;
+    }
+
+    .section-eyebrow {
+        font-size: .9rem !important;
+    }
+
+    .section-heading h2 {
+        font-size: clamp(2rem, 7.5vw, 2.8rem) !important;
+    }
+
+    .section-heading p {
+        font-size: 1.02rem !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+    body {
+        font-size: 16px !important;
+    }
+
+    .breadcrumb-eyebrow {
+        font-size: .72rem !important;
+    }
+
+    .breadcrumb-title {
+        font-size: 2rem !important;
+    }
+
+    .breadcrumb-ul li,
+    .breadcrumb-ul li a {
+        font-size: .9rem !important;
+    }
+
+    .event-info-card h1 {
+        font-size: 1.95rem !important;
+    }
+
+    .event-eyebrow {
+        font-size: .84rem !important;
+    }
+
+    .event-meta-copy small {
+        font-size: .8rem !important;
+    }
+
+    .event-meta-copy strong {
+        font-size: .96rem !important;
+    }
+
+    .event-description p {
+        font-size: .98rem !important;
+    }
+
+    .event-back-link {
+        font-size: .94rem !important;
+    }
+
+    .section-heading h2 {
+        font-size: 2.15rem !important;
+    }
+
+    .section-heading p {
+        font-size: .98rem !important;
+    }
+
+    .footer-heading-responsive {
+        font-size: 1.2rem !important;
+    }
+
+    .footer-link-responsive,
+    .footer-contact-responsive {
+        font-size: 1rem !important;
+    }
+
+    .footer-bottom-responsive,
+    .footer-bottom-links-responsive a,
+    .footer-bottom-text {
+        font-size: .92rem !important;
+    }
+}
+</style>
+
 </head>
 <body class="gmi-loading">
 
@@ -446,7 +813,6 @@ body.event-modal-open { overflow: hidden !important; }
         <a href="events.php" class="gmi-current" aria-current="page">Events</a>
         <a href="careers.php">Careers</a>
         <a href="contact-us.php">Contact Us</a>
-        <a href="contact-us.php" class="gmi-quote-btn">Get a Quote <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
     </nav>
 
     <button type="button" class="gmi-hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation" aria-controls="gmiNavMobile" aria-expanded="false">

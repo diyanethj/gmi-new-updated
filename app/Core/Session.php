@@ -12,7 +12,7 @@ final class Session
         }
 
         $secure = !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off';
-        session_name((string) config('session_name', 'gmg_events_admin'));
+        session_name((string) config('session_name', 'gmigroup_admin'));
         session_set_cookie_params([
             'lifetime' => 0,
             'path' => '/',
@@ -23,8 +23,6 @@ final class Session
         ini_set('session.use_strict_mode', '1');
         ini_set('session.use_only_cookies', '1');
         ini_set('session.cookie_httponly', '1');
-        ini_set('session.sid_length', '64');
-        ini_set('session.sid_bits_per_character', '6');
         session_start();
     }
 

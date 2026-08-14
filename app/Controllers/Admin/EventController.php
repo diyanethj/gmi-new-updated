@@ -32,20 +32,20 @@ final class EventController extends Controller
 
     public function index(): void
     {
-        Auth::requireLogin();
+        Auth::requirePermission('events.view');
         $this->render('admin/events/index', ['events' => $this->events->adminAll()], 'admin/layouts/app');
     }
 
     public function create(): void
     {
-        Auth::requireLogin();
+        Auth::requirePermission('events.create');
         $this->render('admin/events/form', ['event' => null, 'galleryImages' => []], 'admin/layouts/app');
         clear_form_state();
     }
 
     public function store(): void
     {
-        Auth::requireLogin();
+        Auth::requirePermission('events.create');
         Csrf::requireValid();
         $data = $this->eventInput();
         $errors = Validator::event($data, true);
@@ -92,7 +92,7 @@ final class EventController extends Controller
 
     public function edit(): void
     {
-        Auth::requireLogin();
+        Auth::requirePermission('events.edit');
         $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
         $event = $id ? $this->events->find($id) : null;
         if (!$event) {
@@ -107,7 +107,7 @@ final class EventController extends Controller
 
     public function update(): void
     {
-        Auth::requireLogin();
+        Auth::requirePermission('events.edit');
         Csrf::requireValid();
         $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
         $event = $id ? $this->events->find($id) : null;
@@ -177,7 +177,7 @@ final class EventController extends Controller
 
     public function delete(): void
     {
-        Auth::requireLogin();
+        Auth::requirePermission('events.delete');
         Csrf::requireValid();
         $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
         $event = $id ? $this->events->find($id) : null;
@@ -210,7 +210,7 @@ final class EventController extends Controller
 
     public function order(): void
     {
-        Auth::requireLogin();
+        Auth::requirePermission('events.order');
         Csrf::requireValid();
         $input = is_array($_POST['sort_order'] ?? null) ? $_POST['sort_order'] : [];
         $orders = [];

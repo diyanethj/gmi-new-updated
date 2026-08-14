@@ -22,3 +22,7 @@ Stack trace:
 [24-Jul-2026 23:03:29 Asia/Colombo] PHP Deprecated:  ini_set(): session.sid_bits_per_character INI setting is deprecated in /mnt/data/gmg-events-mvc/app/Core/Session.php on line 27
 [24-Jul-2026 23:03:29 Asia/Colombo] PHP Deprecated:  ini_set(): session.sid_length INI setting is deprecated in /mnt/data/gmg-events-mvc/app/Core/Session.php on line 26
 [24-Jul-2026 23:03:29 Asia/Colombo] PHP Deprecated:  ini_set(): session.sid_bits_per_character INI setting is deprecated in /mnt/data/gmg-events-mvc/app/Core/Session.php on line 27
+[01-Aug-2026 12:36:48 Asia/Colombo] Audit log failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`u838229316_gmi_new`.`audit_logs`, CONSTRAINT `fk_audit_admin` FOREIGN KEY (`admin_id`) REFERENCES `admins` (`id`) ON DELETE SET NULL ON UPDATE CASCADE)
+[13-Aug-2026 16:03:33 Asia/Colombo] Crew careers page failed: View not found: public/careers-crew
+[13-Aug-2026 16:03:42 Asia/Colombo] Crew careers page failed: View not found: public/careers-crew
+[14-Aug-2026 09:38:35 Asia/Colombo] Homepage schema preflight failed: SQLSTATE[HY000] [1045] Access denied for user 'u838229316_gmi_new'@'localhost' (using password: YES)

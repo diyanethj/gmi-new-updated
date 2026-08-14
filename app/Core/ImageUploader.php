@@ -5,11 +5,26 @@ namespace Gmg\Events\Core;
 
 final class ImageUploader
 {
+    private string $uploadDirectory;
+    private string $publicPrefix;
+
     private array $allowed = [
         IMAGETYPE_JPEG => ['mime' => 'image/jpeg', 'extension' => 'jpg'],
         IMAGETYPE_PNG => ['mime' => 'image/png', 'extension' => 'png'],
         IMAGETYPE_WEBP => ['mime' => 'image/webp', 'extension' => 'webp'],
     ];
+
+    public function __construct(?string $uploadDirectory = null, ?string $publicPrefix = null)
+    {
+        $this->uploadDirectory = rtrim(
+            $uploadDirectory ?? (string) config('upload_directory'),
+            DIRECTORY_SEPARATOR
+        );
+        $this->publicPrefix = trim(
+            $publicPrefix ?? (string) config('upload_public_prefix'),
+            '/'
+        );
+    }
 
     public function uploadOne(array $file): string
     {
@@ -44,7 +59,7 @@ final class ImageUploader
         }
 
         $subDirectory = date('Y/m');
-        $targetDirectory = rtrim((string) config('upload_directory'), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . str_replace('/', DIRECTORY_SEPARATOR, $subDirectory);
+        $targetDirectory = $this->uploadDirectory . DIRECTORY_SEPARATOR . str_replace('/', DIRECTORY_SEPARATOR, $subDirectory);
         if (!is_dir($targetDirectory) && !mkdir($targetDirectory, 0755, true) && !is_dir($targetDirectory)) {
             throw new \RuntimeException('Unable to create the image upload folder.');
         }
@@ -56,7 +71,7 @@ final class ImageUploader
         }
         @chmod($destination, 0644);
 
-        return trim((string) config('upload_public_prefix'), '/') . '/' . $subDirectory . '/' . $filename;
+        return $this->publicPrefix . '/' . $subDirectory . '/' . $filename;
     }
 
     public function uploadMany(array $files): array
@@ -85,15 +100,15 @@ final class ImageUploader
 
     public function delete(string $relativePath): void
     {
-        $prefix = trim((string) config('upload_public_prefix'), '/') . '/';
+        $prefix = $this->publicPrefix . '/';
         $normalized = str_replace('\\', '/', ltrim($relativePath, '/'));
         if (!str_starts_with($normalized, $prefix) || str_contains($normalized, '..')) {
             return;
         }
 
         $relativeInsideUpload = substr($normalized, strlen($prefix));
-        $absolute = rtrim((string) config('upload_directory'), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . str_replace('/', DIRECTORY_SEPARATOR, $relativeInsideUpload);
-        $uploadRoot = realpath((string) config('upload_directory'));
+        $absolute = $this->uploadDirectory . DIRECTORY_SEPARATOR . str_replace('/', DIRECTORY_SEPARATOR, $relativeInsideUpload);
+        $uploadRoot = realpath($this->uploadDirectory);
         $parent = realpath(dirname($absolute));
         if ($uploadRoot === false || $parent === false || !str_starts_with($parent, $uploadRoot)) {
             return;

@@ -1,71 +1,75 @@
-# Global Marine Group Events MVC
+# Global Marine Group Website MVC Admin
 
-Secure PHP MVC event management system built around the supplied `events.php` and `event-details.php` designs.
+Secure PHP MVC administration for events and selected homepage content.
+
+## Included
+
+- Secure administrator authentication and administrator management
+- Event create, edit, delete, status, order, main image, and gallery management
+- Dynamic `events.php` and `event-details.php`
+- Dynamic homepage `index.php`
+- Latest three published events on the homepage
+- Four editable homepage counter numbers
+- Business partner logo create, edit, delete, status, and order management
 
 ## Requirements
 
 - PHP 8.1 or newer
 - MySQL 8.0+ or MariaDB 10.4+
-- PHP extensions: PDO MySQL and fileinfo
-- Apache with `.htaccess` support recommended
-- Existing GMG site image assets under `images/`
+- PDO MySQL and fileinfo PHP extensions
+- Existing GMG `images/` directory
 
-## Installation
+## Existing installation upgrade
 
-1. Copy all project files into the GMG website root. Keep the existing `images/` directory.
-2. Import `database/schema.sql` using phpMyAdmin or MySQL.
-   - Optional: import `database/seed_existing_events.sql` to migrate the event cards from the supplied static Events page.
-3. Edit `config/database.php` with the database credentials.
-4. Edit `config/app.php`:
-   - Set `base_url` when the site is installed in a subfolder, for example `/gmg`.
-   - Replace `app_key` with a new 64-character random value for production.
-5. Ensure these directories are writable by PHP:
+1. Back up the website and `gmigroup` database.
+2. Import `database/homepage_admin_upgrade.sql` into `gmigroup`.
+3. Replace the project files with this package.
+4. Keep the existing `images/` directory.
+5. Make these directories writable by PHP:
    - `uploads/events/`
+   - `uploads/partners/`
    - `storage/logs/`
-6. Create the first super administrator from Command Prompt / Terminal:
+6. In `config/app.php`, set `base_url` when the project is installed in a subfolder. For `C:\wamp64\www\gmi-new`, use:
 
-```bash
-php tools/create_admin.php admin admin@example.com "A-Strong-Password!2026" super_admin
+```php
+'base_url' => '/gmi-new',
 ```
 
-On WAMP, open Command Prompt in the project folder and use the PHP executable, for example:
+7. Open `/admin/index.php?action=login`.
 
-```bat
-C:\wamp64\bin\php\php8.3.0\php.exe tools\create_admin.php admin admin@example.com "A-Strong-Password!2026" super_admin
+## New admin pages
+
+```text
+/admin/index.php?action=counters
+/admin/index.php?action=partners
+/admin/index.php?action=partners-create
 ```
 
-7. Open:
-   - Public events: `/events.php`
-   - Public detail URL: `/event-details.php?slug=event-slug`
-   - Admin login: `/admin/index.php?action=login`
+## Homepage event selection
 
-## Display order
+The homepage always selects the three newest published events using:
 
-- New events use automatic ordering by `event_date DESC`, so the latest event appears first.
-- In the admin Events screen, enter custom order values such as `1`, `2`, `3` to override automatic ordering.
-- Custom-numbered events appear first, in ascending order. Blank events remain latest-first.
+```sql
+ORDER BY event_date DESC, id DESC
+LIMIT 3
+```
 
-## Security included
+The custom event order used on `events.php` does not change this homepage latest-three selection.
 
-- PDO prepared statements and disabled emulated prepares
-- `password_hash()` / `password_verify()`
-- CSRF protection for every POST request
-- Secure session cookie settings, session ID regeneration, idle timeout, and absolute timeout
-- Login throttling by hashed login identifier and IP address
-- Super-admin authorization for administrator management
-- Output escaping and strict input validation
-- Image MIME, signature, dimension, size, and upload error validation
-- Randomized image filenames
-- PHP/script execution blocked inside uploads
-- Safe image deletion restricted to the configured upload directory
-- Audit records for logins and administrative changes
-- Draft/published event states
-- Last-super-admin and self-deletion protection
+## Security
 
-## Important production settings
+- PDO prepared statements with native prepares
+- CSRF protection on all POST actions
+- Password hashing and secure sessions
+- Admin authorization checks
+- Strict image signature, MIME, dimensions, and size validation
+- Random partner and event upload filenames
+- Script execution blocked in upload folders
+- Output escaping and URL validation
+- Audit logging
 
-- Use HTTPS.
-- Set PHP `upload_max_filesize` and `post_max_size` above 8 MB when uploading several images.
-- Disable directory browsing in Apache.
-- Keep `config/`, `app/`, `database/`, `storage/`, and `tools/` inaccessible from the web. Included `.htaccess` files do this on Apache.
-- After creating the first administrator, keep `tools/` blocked or remove it from the production server.
+See `HOMEPAGE_ADMIN_UPDATE_GUIDE.md` for the file-by-file replacement order.
+
+## About Page Administration
+
+Import `database/about_page_admin_upgrade.sql`, then use `admin/index.php?action=about` to manage directors, management team members, and company team images. See `ABOUT_PAGE_ADMIN_UPDATE_GUIDE.md` for file-by-file instructions.

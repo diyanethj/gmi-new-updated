@@ -24,6 +24,22 @@ final class Event
         return $this->db->query($sql)->fetchAll();
     }
 
+    public function latestPublished(int $limit = 3): array
+    {
+        $limit = max(1, min(12, $limit));
+        $statement = $this->db->prepare(
+            "SELECT e.*,
+                    (SELECT COUNT(*) FROM event_images i WHERE i.event_id = e.id) AS gallery_count
+             FROM events e
+             WHERE e.status = 'published'
+             ORDER BY e.event_date DESC, e.id DESC
+             LIMIT :limit"
+        );
+        $statement->bindValue(':limit', $limit, PDO::PARAM_INT);
+        $statement->execute();
+        return $statement->fetchAll();
+    }
+
     public function adminAll(): array
     {
         $sql = "SELECT e.*,

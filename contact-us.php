@@ -13,8 +13,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="title" content="Global Marine Group">
-    <meta name="description" content="Contact Global Marine Group and Global Feeders Lanka in Colombo, Sri Lanka.">
-    <meta name="keywords" content="Global Marine Group contact, Global Feeders Lanka contact, Colombo office, Sri Lanka shipping company contact">
+    <meta name="description" content="Contact Global Marine Group companies in Sri Lanka, Singapore and the United Arab Emirates, including Global Marine Group, Global Feeders Lanka, MPSS Shipping Pte Ltd and GMG Marine International LLC.">
+    <meta name="keywords" content="Global Marine Group contact, Global Feeders Lanka, MPSS Shipping Singapore, GMG Marine International Dubai, Colombo office, Singapore office, Dubai office">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
     <meta name="author" content="alex">
@@ -28,7 +28,7 @@
     <link rel="preconnect" href="https://images.pexels.com">
     <link rel="preconnect" href="https://www.google.com">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <style>
@@ -67,7 +67,7 @@
             overflow-x: hidden;
             color: var(--gmi-text);
             background: var(--gmi-surface);
-            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             text-rendering: optimizeLegibility;
@@ -1400,6 +1400,947 @@
         }
     </style>
 
+
+<style id="gmi-contact-index-match">
+/* =========================================================
+   CONTACT PAGE FINAL UPDATE
+   EB GARAMOND + INDEX.PHP TYPOGRAPHY + COUNTRY SECTIONS
+   ========================================================= */
+
+/* ---------- Typography ---------- */
+body,
+button,
+input,
+select,
+textarea,
+a,
+p,
+span,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+strong {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+}
+
+/* Preserve Font Awesome */
+.fa,
+.fas,
+.far,
+.fal,
+.fab,
+.fa-solid,
+.fa-regular,
+.fa-brands {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+}
+
+body {
+    font-size: 18px !important;
+    line-height: 1.7 !important;
+}
+
+
+/* ---------- Header ---------- */
+.gmi-nav-buttons > a:not(.gmi-quote-btn) {
+    font-size: 17px !important;
+}
+
+.gmi-nav-buttons a.gmi-quote-btn {
+    font-size: 15px !important;
+}
+
+.gmi-nav-mobile a {
+    font-size: 19px !important;
+}
+
+
+/* ---------- Breadcrumb ---------- */
+.breadcrumb-title {
+    font-size: clamp(2.7rem, 4.2vw, 4.35rem) !important;
+    line-height: 1.08 !important;
+}
+
+.breadcrumb-ul li,
+.breadcrumb-ul li a {
+    font-size: 1rem !important;
+}
+
+
+/* ---------- Global locations introduction ---------- */
+.locations-section {
+    padding: 0 !important;
+    background: #f5f8fc !important;
+}
+
+.global-locations-intro {
+    max-width: 920px !important;
+    margin: 0 auto !important;
+    padding: 92px 0 68px;
+}
+
+.section-eyebrow {
+    font-size: 1rem !important;
+}
+
+.section-intro h1 {
+    font-size: clamp(2.65rem, 4vw, 3.8rem) !important;
+    line-height: 1.08 !important;
+}
+
+.section-intro p {
+    max-width: 800px !important;
+    font-size: 1.12rem !important;
+    line-height: 1.75 !important;
+}
+
+
+/* =========================================================
+   COUNTRY SECTIONS
+   One background per country, not per company.
+   ========================================================= */
+
+.country-office-section {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: 720px;
+    padding: 96px 0;
+    background: #071525;
+}
+
+.country-office-section + .country-office-section {
+    border-top: 1px solid rgba(255,255,255,.10);
+}
+
+.country-background {
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: scale(1.015);
+}
+
+.country-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background:
+        radial-gradient(
+            circle at 18% 72%,
+            rgba(63,120,189,.26),
+            transparent 38%
+        ),
+        linear-gradient(
+            90deg,
+            rgba(4,14,26,.86) 0%,
+            rgba(4,14,26,.59) 48%,
+            rgba(4,14,26,.82) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(4,14,26,.24),
+            rgba(4,14,26,.67)
+        );
+}
+
+/* Colombo / Sri Lanka */
+.country-sri-lanka .country-background {
+    background-image:
+        url('https://images.pexels.com/photos/34927539/pexels-photo-34927539.jpeg?auto=compress&cs=tinysrgb&w=2000');
+    background-position: center 47%;
+}
+
+
+/* Singapore */
+.country-singapore .country-background {
+    background-image:
+        url('https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=2200&q=84');
+    background-position: center center;
+}
+
+/* Dubai / UAE */
+.country-uae .country-background {
+    background-image:
+        url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2200&q=84');
+    background-position: center center;
+}
+
+.country-content {
+    position: relative;
+    z-index: 1;
+}
+
+.country-heading {
+    max-width: 850px;
+    margin: 0 auto 44px;
+    text-align: center;
+}
+
+.country-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 12px;
+    padding: 8px 15px;
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 999px;
+    color: #b9dcff;
+    background: rgba(7,21,37,.38);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.country-kicker i {
+    color: #8ac4ff;
+}
+
+.country-heading h2 {
+    margin: 0 0 12px;
+    color: #fff;
+    font-size: clamp(2.65rem, 4vw, 3.8rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -1px;
+    text-shadow: 0 6px 25px rgba(0,0,0,.30);
+}
+
+.country-heading p {
+    max-width: 720px;
+    margin: 0 auto;
+    color: #d7e7f3;
+    font-size: 1.15rem;
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   OFFICE CARDS
+   ========================================================= */
+
+.country-office-grid {
+    max-width: 1080px;
+    margin: 0 auto 44px;
+    gap: 28px;
+}
+
+.country-office-grid-single {
+    grid-template-columns: minmax(0, 650px) !important;
+    justify-content: center;
+}
+
+.office-card {
+    min-height: 345px !important;
+    border: 1px solid rgba(255,255,255,.18) !important;
+    background:
+        linear-gradient(
+            155deg,
+            rgba(16,36,61,.94) 0%,
+            rgba(26,42,58,.93) 66%,
+            rgba(32,54,108,.94) 100%
+        ) !important;
+    box-shadow: 0 26px 66px rgba(0,0,0,.28) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.office-card-top {
+    display: flex !important;
+    align-items: center !important;
+    gap: 18px !important;
+    min-height: 130px !important;
+    padding: 28px 30px !important;
+}
+
+.office-icon {
+    position: static !important;
+    flex: 0 0 64px;
+    width: 64px !important;
+    height: 64px !important;
+    border-radius: 19px !important;
+    font-size: 22px !important;
+}
+
+.office-card h2 {
+    margin: 0 0 5px !important;
+    font-size: 1.48rem !important;
+    line-height: 1.3 !important;
+}
+
+.office-type {
+    font-size: .95rem !important;
+}
+
+.office-details {
+    padding: 28px 30px 32px !important;
+}
+
+.office-detail {
+    grid-template-columns: 26px minmax(0, 1fr) !important;
+    gap: 14px !important;
+    font-size: 1.08rem !important;
+    line-height: 1.72 !important;
+}
+
+.office-detail i {
+    font-size: 1rem !important;
+}
+
+.office-detail strong {
+    margin-bottom: 3px !important;
+    font-size: 1rem !important;
+}
+
+
+/* =========================================================
+   MAP
+   ========================================================= */
+
+.country-map-shell {
+    max-width: 1180px;
+    border-color: rgba(255,255,255,.25) !important;
+    box-shadow: 0 28px 72px rgba(0,0,0,.30) !important;
+}
+
+.map-heading h2 {
+    font-size: 1.5rem !important;
+}
+
+.map-heading p {
+    font-size: 1.02rem !important;
+}
+
+.map-link {
+    min-height: 48px !important;
+    padding: 12px 20px !important;
+    font-size: 1rem !important;
+}
+
+
+/* =========================================================
+   FOOTER - MATCH UPDATED INDEX.PHP SCALE
+   ========================================================= */
+
+.footer-heading-responsive {
+    font-size: 1.38rem !important;
+}
+
+.footer-link-responsive,
+.footer-contact-responsive {
+    font-size: 1.12rem !important;
+}
+
+.footer-great-text p {
+    font-size: 1rem !important;
+}
+
+.footer-bottom-responsive,
+.footer-bottom-links-responsive a,
+.footer-bottom-text {
+    font-size: 1rem !important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+    body {
+        font-size: 17px !important;
+    }
+
+    .breadcrumb-title {
+        font-size: clamp(2.4rem, 5vw, 3.55rem) !important;
+    }
+
+    .global-locations-intro {
+        padding: 78px 0 58px;
+    }
+
+    .section-intro h1,
+    .country-heading h2 {
+        font-size: clamp(2.3rem, 5vw, 3.25rem) !important;
+    }
+
+    .section-intro p,
+    .country-heading p {
+        font-size: 1.08rem !important;
+    }
+
+    .country-office-section {
+        padding: 78px 0;
+    }
+
+    .footer-heading-responsive {
+        font-size: 1.28rem !important;
+    }
+
+    .footer-link-responsive,
+    .footer-contact-responsive {
+        font-size: 1.06rem !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    body {
+        font-size: 16.5px !important;
+    }
+
+    .gmi-nav-mobile a {
+        font-size: 18px !important;
+    }
+
+    .breadcrumb-title {
+        font-size: clamp(2.15rem, 7.6vw, 3rem) !important;
+    }
+
+    .breadcrumb-ul li,
+    .breadcrumb-ul li a {
+        font-size: .95rem !important;
+    }
+
+    .global-locations-intro {
+        padding: 64px 0 48px;
+    }
+
+    .section-eyebrow {
+        font-size: .9rem !important;
+    }
+
+    .section-intro h1,
+    .country-heading h2 {
+        font-size: clamp(2rem, 7.5vw, 2.8rem) !important;
+    }
+
+    .section-intro p,
+    .country-heading p {
+        font-size: 1.02rem !important;
+    }
+
+    .country-office-section {
+        min-height: auto;
+        padding: 62px 0;
+    }
+
+    .country-heading {
+        margin-bottom: 34px;
+    }
+
+    .country-kicker {
+        font-size: .92rem;
+    }
+
+    .country-office-grid,
+    .country-office-grid-single {
+        grid-template-columns: 1fr !important;
+    }
+
+    .office-card {
+        min-height: auto !important;
+    }
+
+    .office-card-top {
+        min-height: 114px !important;
+        padding: 24px !important;
+    }
+
+    .office-icon {
+        flex-basis: 58px;
+        width: 58px !important;
+        height: 58px !important;
+    }
+
+    .office-card h2 {
+        font-size: 1.35rem !important;
+    }
+
+    .office-details {
+        padding: 24px !important;
+    }
+
+    .office-detail {
+        font-size: 1.02rem !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    body {
+        font-size: 16px !important;
+    }
+
+    .breadcrumb-title {
+        font-size: 2rem !important;
+    }
+
+    .breadcrumb-ul li,
+    .breadcrumb-ul li a {
+        font-size: .9rem !important;
+    }
+
+    .global-locations-intro {
+        padding: 52px 0 42px;
+    }
+
+    .section-intro h1,
+    .country-heading h2 {
+        font-size: 2.15rem !important;
+    }
+
+    .section-intro p,
+    .country-heading p {
+        font-size: .98rem !important;
+    }
+
+    .country-office-section {
+        padding: 50px 0;
+    }
+
+    .country-kicker {
+        font-size: .86rem;
+    }
+
+    .office-card h2 {
+        font-size: 1.25rem !important;
+    }
+
+    .office-type {
+        font-size: .86rem !important;
+    }
+
+    .office-detail {
+        font-size: .98rem !important;
+    }
+
+    .office-detail strong {
+        font-size: .94rem !important;
+    }
+
+    .map-heading h2 {
+        font-size: 1.28rem !important;
+    }
+
+    .map-heading p {
+        font-size: .96rem !important;
+    }
+
+    .map-link {
+        width: 100%;
+        font-size: .95rem !important;
+    }
+
+    .footer-heading-responsive {
+        font-size: 1.2rem !important;
+    }
+
+    .footer-link-responsive,
+    .footer-contact-responsive {
+        font-size: 1rem !important;
+    }
+
+    .footer-bottom-responsive,
+    .footer-bottom-links-responsive a,
+    .footer-bottom-text {
+        font-size: .92rem !important;
+    }
+}
+
+</style>
+
+
+<style id="gmi-current-contact-visual-fix">
+/* =========================================================
+   CURRENT CONTACT PAGE UPDATE
+   1. Fixed cityscape background
+   2. Smooth country-to-country cross-fade
+   3. Lighter company information cards
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   FIXED COUNTRY BACKGROUND
+   --------------------------------------------------------- */
+
+.gmi-country-bg-stage {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+    background: #0b1c30;
+}
+
+.gmi-country-bg-layer {
+    position: absolute;
+    inset: -2%;
+    width: 104%;
+    height: 104%;
+    opacity: 0;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: scale(1.035);
+    filter: saturate(.98) contrast(1.04) brightness(.96);
+    transition:
+        opacity 1.15s cubic-bezier(.22, 1, .36, 1),
+        transform 1.45s cubic-bezier(.22, 1, .36, 1),
+        filter 1.10s ease;
+    will-change: opacity, transform;
+}
+
+.gmi-country-bg-layer.is-active {
+    opacity: 1;
+    transform: scale(1);
+    filter: saturate(1) contrast(1.03) brightness(1);
+}
+
+.gmi-country-bg-shade {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(
+            circle at 18% 72%,
+            rgba(63, 120, 189, .16),
+            transparent 39%
+        ),
+        linear-gradient(
+            90deg,
+            rgba(5, 16, 29, .55) 0%,
+            rgba(5, 16, 29, .30) 48%,
+            rgba(5, 16, 29, .54) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(5, 16, 29, .12),
+            rgba(5, 16, 29, .40)
+        );
+}
+
+
+/*
+   The current page has a cityscape inside each country section.
+   Hide those section-owned backgrounds because they scroll.
+*/
+.country-office-section > .country-background,
+.country-office-section > .country-overlay {
+    display: none !important;
+}
+
+
+/* The locations wrapper must allow the fixed background to show. */
+.locations-section {
+    position: relative !important;
+    z-index: 1 !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    background: transparent !important;
+}
+
+.locations-section::before,
+.locations-section::after {
+    display: none !important;
+}
+
+
+/*
+   Keep the "Our Global Locations" introductory area clean/white.
+   The fixed city image starts visually behind the actual country
+   sections below it.
+*/
+.locations-section > .container:first-child {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: none !important;
+    padding: 0 20px;
+    background: linear-gradient(180deg, #ffffff 0%, #f4f8fc 100%);
+}
+
+.global-locations-intro {
+    max-width: 920px !important;
+    margin: 0 auto !important;
+    padding-top: 92px !important;
+    padding-bottom: 68px !important;
+}
+
+
+/* Country content floats above the single fixed background. */
+.country-office-section {
+    position: relative !important;
+    z-index: 2 !important;
+    isolation: isolate;
+    overflow: hidden;
+    background: transparent !important;
+}
+
+.country-office-section + .country-office-section {
+    border-top: 1px solid rgba(255, 255, 255, .14) !important;
+}
+
+
+/* ---------------------------------------------------------
+   LIGHTER COMPANY DETAILS CARDS
+   --------------------------------------------------------- */
+
+.office-card {
+    border: 1px solid rgba(255, 255, 255, .64) !important;
+    border-radius: 24px !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(249, 252, 255, .95) 0%,
+            rgba(232, 240, 249, .93) 100%
+        ) !important;
+
+    box-shadow:
+        0 24px 58px rgba(4, 14, 26, .20),
+        inset 0 1px 0 rgba(255, 255, 255, .92) !important;
+
+    backdrop-filter: blur(16px) saturate(120%);
+    -webkit-backdrop-filter: blur(16px) saturate(120%);
+}
+
+.office-card::before {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, .50),
+            transparent 42%,
+            transparent 76%,
+            rgba(32, 54, 108, .06)
+        ) !important;
+}
+
+.office-card:hover {
+    border-color: rgba(255, 255, 255, .88) !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, .985) 0%,
+            rgba(239, 246, 252, .97) 100%
+        ) !important;
+
+    box-shadow:
+        0 30px 70px rgba(4, 14, 26, .25),
+        inset 0 1px 0 rgba(255, 255, 255, .96) !important;
+}
+
+
+/* Card header separator */
+.office-card-top {
+    border-bottom: 1px solid rgba(32, 54, 108, .12) !important;
+}
+
+
+/* Keep the icon blue so the card still matches the brand. */
+.office-icon {
+    border-color: rgba(32, 54, 108, .14) !important;
+    color: #ffffff !important;
+    background:
+        linear-gradient(
+            145deg,
+            #20366C 0%,
+            #2a4a8a 100%
+        ) !important;
+    box-shadow: 0 10px 24px rgba(32, 54, 108, .20) !important;
+}
+
+
+/* Dark text on the lighter cards */
+.office-card h2 {
+    color: #20366C !important;
+}
+
+.office-type {
+    color: #617591 !important;
+}
+
+.office-detail {
+    color: #43566a !important;
+}
+
+.office-detail i {
+    color: #2a4a8a !important;
+}
+
+.office-detail strong {
+    color: #20366C !important;
+}
+
+.office-detail a {
+    color: #43566a !important;
+}
+
+.office-detail a:hover {
+    color: #20366C !important;
+}
+
+
+/* Map remains solid and readable above the cityscape. */
+.country-map-shell,
+.map-shell {
+    background: rgba(255, 255, 255, .97) !important;
+    border-color: rgba(255, 255, 255, .72) !important;
+    box-shadow: 0 28px 68px rgba(4, 14, 26, .24) !important;
+}
+
+
+/* Footer always sits over the fixed background stage. */
+.footer-inline {
+    position: relative !important;
+    z-index: 4 !important;
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------- */
+
+@media (max-width: 992px) {
+    .global-locations-intro {
+        padding-top: 78px !important;
+        padding-bottom: 58px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .locations-section > .container:first-child {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .global-locations-intro {
+        padding-top: 64px !important;
+        padding-bottom: 48px !important;
+    }
+
+    .office-card {
+        background:
+            linear-gradient(
+                145deg,
+                rgba(255, 255, 255, .98) 0%,
+                rgba(237, 244, 251, .97) 100%
+            ) !important;
+    }
+
+    .gmi-country-bg-shade {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(5, 16, 29, .34),
+                rgba(5, 16, 29, .52)
+            );
+    }
+}
+
+@media (max-width: 480px) {
+    .locations-section > .container:first-child {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    .global-locations-intro {
+        padding-top: 52px !important;
+        padding-bottom: 42px !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gmi-country-bg-layer {
+        transition: none !important;
+        transform: none !important;
+    }
+}
+</style>
+
+
+<style id="gmi-breadcrumb-visibility-fix">
+/* =========================================================
+   BREADCRUMB VISIBILITY FIX
+   Keep breadcrumb above the fixed country background layer.
+   ========================================================= */
+
+.breadcrumb-section {
+    position: relative !important;
+    z-index: 5 !important;
+    isolation: isolate !important;
+}
+
+.breadcrumb-section::before {
+    z-index: -1 !important;
+}
+
+.breadcrumb-section > .container {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+.breadcrumb-area {
+    position: relative !important;
+    z-index: 3 !important;
+}
+
+.breadcrumb-title {
+    position: relative !important;
+    z-index: 3 !important;
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: #ffffff !important;
+}
+
+.breadcrumb-ul {
+    position: relative !important;
+    z-index: 3 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.breadcrumb-ul li,
+.breadcrumb-ul li a,
+.active-breadcrumb {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* The country background is only for the locations area. */
+.gmi-country-bg-stage {
+    z-index: 0 !important;
+}
+
+/* Ensure all page content before the locations area remains above it. */
+.gmi-custom-header,
+.breadcrumb-section {
+    transform: translateZ(0);
+}
+</style>
+
 </head>
 
 <body class="gmi-loading">
@@ -1429,7 +2370,6 @@
             <a href="events.php">Events</a>
             <a href="careers.php">Careers</a>
             <a href="contact-us.php" class="gmi-current">Contact Us</a>
-            <a href="#locations" class="gmi-quote-btn">Our Locations <i class="fas fa-arrow-right"></i></a>
         </nav>
 
         <button type="button" class="gmi-hamburger" aria-label="Toggle navigation" aria-controls="gmiNavMobile" aria-expanded="false" onclick="toggleMobileNav()">
@@ -1461,100 +2401,365 @@
             </div>
         </div>
     </section>
+<!-- Global Locations -->
 
-    <!-- Locations -->
-    <main id="locations" class="locations-section">
+    <!-- Fixed country cityscape background.
+         The image stays in place while content scrolls. -->
+    <div id="gmiCountryBgStage" class="gmi-country-bg-stage" aria-hidden="true">
+        <div id="gmiCountryBgA" class="gmi-country-bg-layer is-active"></div>
+        <div id="gmiCountryBgB" class="gmi-country-bg-layer"></div>
+        <div class="gmi-country-bg-shade"></div>
+    </div>
+
+<main id="locations" class="locations-section">
+
         <div class="container">
-            <div class="section-intro reveal">
-                <span class="section-eyebrow">Our Locations</span>
-                <h1>Colombo, Sri Lanka</h1>
-                <p>Connect with our Colombo teams for marine, shipping, logistics and agency-related inquiries.</p>
-                <span class="country-label"><i class="fas fa-location-dot"></i> Sri Lanka</span>
+            <div class="section-intro global-locations-intro reveal">
+                <span class="section-eyebrow">Our Global Locations</span>
+                <h1>Connect With Us Worldwide</h1>
+                <p>
+                    Find Global Marine Group companies in Sri Lanka, Singapore and the
+                    United Arab Emirates, and connect with the relevant team for shipping,
+                    marine, logistics and agency-related inquiries.
+                </p>
             </div>
+        </div>
 
-            <div class="office-grid">
-                <article class="office-card reveal">
-                    <div class="office-card-top">
-                        <span class="office-icon"><i class="fas fa-building"></i></span>
-                        <h2>Global Marine Group</h2>
-                        <span class="office-type">Head Office</span>
-                    </div>
 
-                    <div class="office-details">
-                        <div class="office-detail">
-                            <i class="fas fa-location-dot"></i>
-                            <div>
-                                <strong>Address</strong>
-                                292, R.A. de Mel Mawatha,<br>Colombo 00300, Sri Lanka
-                            </div>
-                        </div>
+        <!-- ==================================================
+             SRI LANKA — COLOMBO
+             ================================================== -->
+        <section id="sri-lanka" class="country-office-section country-sri-lanka">
 
-                        <div class="office-detail">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <strong>Phone</strong>
-                                <a href="tel:+94114614521">+94 114 614 521</a>
-                            </div>
-                        </div>
+            <div class="country-background" aria-hidden="true"></div>
+            <div class="country-overlay" aria-hidden="true"></div>
 
-                        <div class="office-detail">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <strong>Email</strong>
-                                <a href="mailto:info@gmigroup.lk">info@gmigroup.lk</a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
+            <div class="container country-content">
 
-                <article class="office-card reveal">
-                    <div class="office-card-top">
-                        <span class="office-icon"><i class="fas fa-ship"></i></span>
-                        <h2>Global Feeders Lanka</h2>
-                        <span class="office-type">Colombo Office</span>
-                    </div>
+                <div class="country-heading reveal">
+                    <span class="country-kicker">
+                        <i class="fas fa-location-dot"></i>
+                        Sri Lanka
+                    </span>
 
-                    <div class="office-details">
-                        <div class="office-detail">
-                            <i class="fas fa-location-dot"></i>
-                            <div>
-                                <strong>Address</strong>
-                                1st Floor, Rotunda Towers,<br>109, Galle Road,<br>Colombo 00300, Sri Lanka
-                            </div>
-                        </div>
+                    <h2>Colombo</h2>
 
-                        <div class="office-detail">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <strong>Phone</strong>
-                                <a href="tel:+94112027217">+94 112 027 217</a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
-            <section class="map-shell reveal" aria-label="Global Marine Group map location">
-                <div class="map-heading">
-                    <div>
-                        <h2>Find Us in Colombo</h2>
-                        <p>Global Marine Group Head Office — 292, R.A. de Mel Mawatha.</p>
-                    </div>
-                    <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=292%20R.A.%20de%20Mel%20Mawatha%2C%20Colombo%2000300%2C%20Sri%20Lanka" target="_blank" rel="noopener noreferrer">
-                        Open in Google Maps <i class="fas fa-arrow-up-right-from-square"></i>
-                    </a>
+                    <p>
+                        Connect with our Sri Lankan teams for shipping, logistics,
+                        marine services and agency-related inquiries.
+                    </p>
                 </div>
 
-                <iframe
-                    class="map-frame"
-                    title="Global Marine Group, Colombo"
-                    src="https://www.google.com/maps?q=292%20R.A.%20de%20Mel%20Mawatha%2C%20Colombo%2000300%2C%20Sri%20Lanka&amp;output=embed"
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                    allowfullscreen>
-                </iframe>
-            </section>
-        </div>
+
+                <div class="office-grid country-office-grid">
+
+                    <!-- Global Feeders Lanka -->
+                    <article class="office-card reveal">
+
+                        <div class="office-card-top">
+                            <span class="office-icon">
+                                <i class="fas fa-ship"></i>
+                            </span>
+
+                            <div>
+                                <h2>Global Feeders Lanka (Pvt) Ltd</h2>
+                                <span class="office-type">Colombo Office</span>
+                            </div>
+                        </div>
+
+                        <div class="office-details">
+
+                            <div class="office-detail">
+                                <i class="fas fa-location-dot"></i>
+                                <div>
+                                    <strong>Address</strong>
+                                    1st Floor, Rotunda Towers, 109, Galle Road<br>
+                                    Colombo 00300, Sri Lanka
+                                </div>
+                            </div>
+
+                            <div class="office-detail">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Phone</strong>
+                                    <a href="tel:+94112027217">
+                                        +94 112 027 217
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="office-detail">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email</strong>
+                                    <a href="mailto:info@globalfeeders.lk">
+                                        info@globalfeeders.lk
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Global Marine Group Head Office -->
+                    <article class="office-card reveal">
+
+                        <div class="office-card-top">
+                            <span class="office-icon">
+                                <i class="fas fa-building"></i>
+                            </span>
+
+                            <div>
+                                <h2>Global Marine Group</h2>
+                                <span class="office-type">Head Office</span>
+                            </div>
+                        </div>
+
+                        <div class="office-details">
+
+                            <div class="office-detail">
+                                <i class="fas fa-location-dot"></i>
+                                <div>
+                                    <strong>Address</strong>
+                                    No. 292, R. A. De Mel Mawatha,<br>
+                                    Colombo 00300, Sri Lanka
+                                </div>
+                            </div>
+
+                            <div class="office-detail">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Phone</strong>
+                                    <a href="tel:+94114614521">
+                                        +94 114 614 521
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="office-detail">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email</strong>
+                                    <a href="mailto:info@gmigroup.lk">
+                                        info@gmigroup.lk
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <section
+                    class="map-shell country-map-shell reveal"
+                    aria-label="Global Marine Group Colombo location"
+                >
+                    <div class="map-heading">
+
+                        <div>
+                            <h2>Find Us in Colombo</h2>
+                            <p>
+                                Global Marine Group Head Office —
+                                No. 292, R. A. De Mel Mawatha.
+                            </p>
+                        </div>
+
+                        <a
+                            class="map-link"
+                            href="https://www.google.com/maps/search/?api=1&query=292%20R.A.%20De%20Mel%20Mawatha%2C%20Colombo%2000300%2C%20Sri%20Lanka"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Open in Google Maps
+                            <i class="fas fa-arrow-up-right-from-square"></i>
+                        </a>
+
+                    </div>
+
+                    <iframe
+                        class="map-frame"
+                        title="Global Marine Group, Colombo"
+                        src="https://www.google.com/maps?q=292%20R.A.%20De%20Mel%20Mawatha%2C%20Colombo%2000300%2C%20Sri%20Lanka&amp;output=embed"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        allowfullscreen
+                    ></iframe>
+
+                </section>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             SINGAPORE
+             ================================================== -->
+        <section id="singapore" class="country-office-section country-singapore">
+
+            <div class="country-background" aria-hidden="true"></div>
+            <div class="country-overlay" aria-hidden="true"></div>
+
+            <div class="container country-content">
+
+                <div class="country-heading reveal">
+                    <span class="country-kicker">
+                        <i class="fas fa-location-dot"></i>
+                        Singapore
+                    </span>
+
+                    <h2>Singapore</h2>
+
+                    <p>
+                        Connect with MPSS Shipping Pte Ltd for regional shipping
+                        and maritime business inquiries.
+                    </p>
+                </div>
+
+
+                <div class="office-grid country-office-grid country-office-grid-single">
+
+                    <article class="office-card reveal">
+
+                        <div class="office-card-top">
+                            <span class="office-icon">
+                                <i class="fas fa-ship"></i>
+                            </span>
+
+                            <div>
+                                <h2>MPSS Shipping Pte Ltd</h2>
+                                <span class="office-type">Singapore Office</span>
+                            </div>
+                        </div>
+
+                        <div class="office-details">
+
+                            <div class="office-detail">
+                                <i class="fas fa-location-dot"></i>
+                                <div>
+                                    <strong>Address</strong>
+                                    8, Marine View, Asia Square Tower 1,<br>
+                                    #43-01, #42-01, Singapore 018960
+                                </div>
+                            </div>
+
+                            <div class="office-detail">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Phone</strong>
+                                    <a href="tel:+6564991888">
+                                        +65 6499 1888
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="office-detail">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email</strong>
+                                    <a href="mailto:info@gmigroup.lk">
+                                        info@gmigroup.lk
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             UNITED ARAB EMIRATES — DUBAI
+             ================================================== -->
+        <section id="uae" class="country-office-section country-uae">
+
+            <div class="country-background" aria-hidden="true"></div>
+            <div class="country-overlay" aria-hidden="true"></div>
+
+            <div class="container country-content">
+
+                <div class="country-heading reveal">
+                    <span class="country-kicker">
+                        <i class="fas fa-location-dot"></i>
+                        United Arab Emirates
+                    </span>
+
+                    <h2>Dubai</h2>
+
+                    <p>
+                        Connect with GMG Marine International LLC for international
+                        marine, shipping and regional business inquiries.
+                    </p>
+                </div>
+
+
+                <div class="office-grid country-office-grid country-office-grid-single">
+
+                    <article class="office-card reveal">
+
+                        <div class="office-card-top">
+                            <span class="office-icon">
+                                <i class="fas fa-earth-asia"></i>
+                            </span>
+
+                            <div>
+                                <h2>GMG Marine International LLC</h2>
+                                <span class="office-type">Dubai Office</span>
+                            </div>
+                        </div>
+
+                        <div class="office-details">
+
+                            <div class="office-detail">
+                                <i class="fas fa-location-dot"></i>
+                                <div>
+                                    <strong>Address</strong>
+                                    Meydan Grandstand, 6th floor, Meydan Road,<br>
+                                    Nad Al Sheba, Dubai, UAE
+                                </div>
+                            </div>
+
+                            <div class="office-detail">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Phone</strong>
+                                    <a href="tel:+971586940667">
+                                        +971 58 694 0667
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="office-detail">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email</strong>
+                                    <a href="mailto:info@gmigroup.lk">
+                                        info@gmigroup.lk
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
     </main>
 
     <!-- Footer -->
@@ -1741,5 +2946,148 @@
             updateScrollUI();
         }());
     </script>
+
+<script id="gmi-country-background-switcher">
+(function () {
+    'use strict';
+
+    const layerA = document.getElementById('gmiCountryBgA');
+    const layerB = document.getElementById('gmiCountryBgB');
+
+    if (!layerA || !layerB) {
+        return;
+    }
+
+    const backgrounds = {
+        'sri-lanka':
+            'https://images.pexels.com/photos/34927539/pexels-photo-34927539.jpeg?auto=compress&cs=tinysrgb&w=2000',
+
+        'singapore':
+            'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=2200&q=84',
+
+        'uae':
+            'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2200&q=84'
+    };
+
+    const sections = Array.from(
+        document.querySelectorAll('.country-office-section')
+    );
+
+    if (!sections.length) {
+        return;
+    }
+
+    let activeCountry = 'sri-lanka';
+    let visibleLayer = layerA;
+    let hiddenLayer = layerB;
+
+    /* First visible background */
+    visibleLayer.style.backgroundImage =
+        'url("' + backgrounds[activeCountry] + '")';
+
+
+    /* Preload all three images so there is no white flash. */
+    Object.values(backgrounds).forEach(function (url) {
+        const image = new Image();
+        image.src = url;
+    });
+
+
+    function changeCountryBackground(countryId) {
+        if (!backgrounds[countryId] || countryId === activeCountry) {
+            return;
+        }
+
+        activeCountry = countryId;
+
+        hiddenLayer.style.backgroundImage =
+            'url("' + backgrounds[countryId] + '")';
+
+        /* Ensure the browser registers the new layer first. */
+        void hiddenLayer.offsetWidth;
+
+        hiddenLayer.classList.add('is-active');
+        visibleLayer.classList.remove('is-active');
+
+        const oldVisible = visibleLayer;
+        visibleLayer = hiddenLayer;
+        hiddenLayer = oldVisible;
+    }
+
+
+    /*
+       A narrow center band makes the background change when the
+       visitor actually reaches the next country, not too early.
+    */
+    if ('IntersectionObserver' in window) {
+        const countryObserver = new IntersectionObserver(
+            function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting && entry.target.id) {
+                        changeCountryBackground(entry.target.id);
+                    }
+                });
+            },
+            {
+                root: null,
+                threshold: 0,
+                rootMargin: '-43% 0px -43% 0px'
+            }
+        );
+
+        sections.forEach(function (section) {
+            countryObserver.observe(section);
+        });
+
+    } else {
+        /* Fallback for older browsers */
+        let backgroundTicking = false;
+
+        function updateCountryByScroll() {
+            backgroundTicking = false;
+
+            const focusPoint = window.innerHeight * 0.5;
+            let selected = sections[0];
+            let smallestDistance = Infinity;
+
+            sections.forEach(function (section) {
+                const rect = section.getBoundingClientRect();
+
+                if (rect.top <= focusPoint && rect.bottom >= focusPoint) {
+                    selected = section;
+                    smallestDistance = 0;
+                    return;
+                }
+
+                const sectionCenter = rect.top + rect.height / 2;
+                const distance = Math.abs(sectionCenter - focusPoint);
+
+                if (distance < smallestDistance) {
+                    smallestDistance = distance;
+                    selected = section;
+                }
+            });
+
+            if (selected && selected.id) {
+                changeCountryBackground(selected.id);
+            }
+        }
+
+        window.addEventListener(
+            'scroll',
+            function () {
+                if (!backgroundTicking) {
+                    backgroundTicking = true;
+                    window.requestAnimationFrame(updateCountryByScroll);
+                }
+            },
+            { passive: true }
+        );
+
+        updateCountryByScroll();
+    }
+}());
+</script>
+
 </body>
 </html>

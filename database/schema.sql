@@ -1,11 +1,11 @@
 -- Global Marine Group Events MVC
 -- MySQL 8.0+ / MariaDB 10.4+
 
-CREATE DATABASE IF NOT EXISTS gmg_events
+CREATE DATABASE IF NOT EXISTS gmigroup
     CHARACTER SET utf8mb4
     COLLATE utf8mb4_unicode_ci;
 
-USE gmg_events;
+USE gmigroup;
 
 CREATE TABLE IF NOT EXISTS admins (
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
