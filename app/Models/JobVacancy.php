@@ -31,15 +31,33 @@ final class JobVacancy
         )->fetchAll();
     }
 
-    public function adminAll(): array
+    public function adminAll(string $company = ''): array
     {
-        return $this->db->query(
-            "SELECT v.*, a.username AS creator_username,
-                    (SELECT COUNT(*) FROM job_applications ja WHERE ja.vacancy_id = v.id) AS application_count
-             FROM job_vacancies v
-             LEFT JOIN admins a ON a.id = v.created_by
-             ORDER BY FIELD(v.company, 'GMG', 'GMS'), v.company_name ASC, v.sort_order ASC, v.id DESC"
-        )->fetchAll();
+        $company = strtoupper(trim($company));
+
+        $sql = "SELECT v.*, a.username AS creator_username,
+                       (SELECT COUNT(*) FROM job_applications ja WHERE ja.vacancy_id = v.id) AS application_count
+                FROM job_vacancies v
+                LEFT JOIN admins a ON a.id = v.created_by";
+
+        if (in_array($company, ['GMG', 'GMS'], true)) {
+            $sql .= " WHERE v.company = :company";
+        }
+
+        $sql .= " ORDER BY FIELD(v.company, 'GMG', 'GMS'),
+                         v.company_name ASC,
+                         v.sort_order ASC,
+                         v.id DESC";
+
+        $stmt = $this->db->prepare($sql);
+
+        if (in_array($company, ['GMG', 'GMS'], true)) {
+            $stmt->execute([':company' => $company]);
+        } else {
+            $stmt->execute();
+        }
+
+        return $stmt->fetchAll();
     }
 
     public function find(int $id): ?array

@@ -37,6 +37,7 @@ $currentAction = (string) ($_GET['action'] ?? 'dashboard');
             <?php if (Auth::can('about.teams.view')): ?><a class="<?= str_starts_with($currentAction, 'about-teams') ? 'active' : '' ?>" href="<?= e(admin_url('about-teams')) ?>"><i class="fas fa-people-group"></i>Our Teams</a><?php endif; ?>
             <?php if (Auth::can('careers.vacancies.view')): ?><a class="<?= str_starts_with($currentAction, 'careers-vacancies') ? 'active' : '' ?>" href="<?= e(admin_url('careers-vacancies')) ?>"><i class="fas fa-briefcase"></i>Job Vacancies</a><?php endif; ?>
             <?php if (Auth::can('careers.applications.view')): ?><a class="<?= str_starts_with($currentAction, 'careers-application') ? 'active' : '' ?>" href="<?= e(admin_url('careers-applications')) ?>"><i class="fas fa-file-lines"></i>Applications</a><?php endif; ?>
+            <?php if (Auth::can('footer_contact.view')): ?><a class="<?= str_starts_with($currentAction, 'footer-contact') ? 'active' : '' ?>" href="<?= e(admin_url('footer-contact')) ?>"><i class="fas fa-address-book"></i>Contact Details</a><?php endif; ?>
             <?php if (Auth::can('admins.view')): ?><a class="<?= str_starts_with($currentAction, 'admins') ? 'active' : '' ?>" href="<?= e(admin_url('admins')) ?>"><i class="fas fa-user-shield"></i>Administrators</a><?php endif; ?>
         </nav>
         <div class="sidebar-bottom">

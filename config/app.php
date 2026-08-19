@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 return [
     'name' => 'Global Marine Group Website Admin',
-    'base_url' => '/gmigroup', // Example: '/gmg' when installed in a subfolder. Leave blank at domain root.
+    'base_url' => '/', // Example: '/gmg' when installed in a subfolder. Leave blank at domain root.
     'timezone' => 'Asia/Colombo',
     'debug' => false,
     'app_key' => '1668d9bd41f8eae2edd0bb13bea6d1707eea2b7fd07c6134c38cd8a63bfad690', // Change in production.

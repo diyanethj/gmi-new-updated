@@ -1,3 +1,28 @@
+<?php
+use Gmg\Events\Core\Database;
+use Gmg\Events\Models\FooterContact;
+
+/* Footer contact settings are loaded here so this updated home.php works
+   without requiring a separate public-controller change. */
+try {
+    $footerContact = (new FooterContact(Database::connection()))->get();
+} catch (\Throwable $exception) {
+    error_log('Footer contact load failed: ' . $exception->getMessage());
+    $footerContact = [
+        'address' => '292 R. A. De Mel Mawatha, Colombo, Sri Lanka',
+        'phone' => '+94 11 2 345 678',
+        'email' => 'info@gmigroup.lk',
+        'office_hours' => 'Mon - Fri: 8:30 AM - 5:30 PM',
+        'linkedin_url' => null,
+        'facebook_url' => null,
+        'instagram_url' => null,
+        'tiktok_url' => null,
+        'youtube_url' => null,
+    ];
+}
+
+$footerPhoneHref = preg_replace('/[^0-9+]/', '', (string) $footerContact['phone']);
+?>
 <!DOCTYPE html>
 <html class="no-js gmi-loading-root" lang="en" style="background:#071525;">
 
@@ -1148,6 +1173,189 @@ li {
 }
 /* ===== END EB GARAMOND OVERRIDE ===== */
 
+
+/* =========================================================
+   HOMEPAGE BANNER — FIRST TWEAK
+   Title centered at video bottom; CTAs below slogan.
+   ========================================================= */
+.hero-content {
+    left: 50%;
+    right: auto;
+    bottom: 3.5%;
+    width: min(94%, 1180px);
+    max-width: 1180px;
+    text-align: center;
+    transform: translate3d(-50%, 24px, 0);
+}
+
+body.premium-ready .hero-content {
+    transform: translate3d(-50%, 0, 0);
+}
+
+.hero-content::before {
+    left: 50%;
+    width: 150px;
+    transform: translateX(-50%);
+}
+
+.hero-content h1 {
+    margin: 0 auto;
+    max-width: 1100px;
+    text-transform: uppercase;
+    letter-spacing: 0.055em;
+}
+
+.gmi-slogan-bar {
+    padding-top: 18px;
+    padding-bottom: 22px;
+}
+
+.gmi-slogan-actions {
+    position: relative;
+    z-index: 1;
+    justify-content: center;
+    margin: 14px auto 0;
+}
+
+.gmi-slogan-actions .hero-btn-primary,
+.gmi-slogan-actions .hero-btn-secondary {
+    min-width: 190px;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        left: 50%;
+        right: auto;
+        bottom: 4%;
+        width: 92%;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2rem, 7.6vw, 3rem);
+        line-height: 1.08;
+        letter-spacing: 0.04em;
+    }
+
+    .gmi-slogan-bar {
+        padding-top: 14px;
+        padding-bottom: 18px;
+    }
+
+    .gmi-slogan-actions {
+        margin-top: 12px;
+    }
+}
+
+@media (max-width: 560px) {
+    .hero-content {
+        bottom: 3.5%;
+    }
+
+    .hero-content::before {
+        width: 90px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(1.65rem, 8vw, 2.25rem);
+        letter-spacing: 0.035em;
+    }
+
+    .gmi-slogan-actions {
+        width: min(92%, 310px);
+        max-width: 310px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.7rem;
+    }
+}
+
+
+/* =========================================================
+   HOMEPAGE BANNER — BUTTONS DIRECTLY UNDER TITLE
+   ========================================================= */
+.hero-content {
+    bottom: 4.8%;
+}
+
+.hero-content .hero-cta-group {
+    justify-content: center;
+    margin-top: 18px;
+}
+
+.hero-content .hero-btn-primary,
+.hero-content .hero-btn-secondary {
+    min-width: 190px;
+    justify-content: center;
+}
+
+.gmi-slogan-actions {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        bottom: 4.5%;
+    }
+
+    .hero-content .hero-cta-group {
+        margin-top: 14px;
+    }
+}
+
+@media (max-width: 560px) {
+    .hero-content {
+        bottom: 3.8%;
+    }
+
+    .hero-content .hero-cta-group {
+        width: min(92%, 310px);
+        max-width: 310px;
+        margin: 12px auto 0;
+    }
+}
+
+
+/* =========================================================
+   HOMEPAGE SLOGAN — SINGLE ROUNDED BOX
+   ========================================================= */
+.gmi-slogan-bar .gmi-slogan-text .gmi-tagline-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.62rem 2.35rem;
+    border: 1px solid rgba(138,196,255,0.20);
+    border-radius: 999px;
+    color: #ffffff;
+    background: rgba(255,255,255,0.055);
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.08),
+        0 12px 30px rgba(0,0,0,0.14);
+    white-space: nowrap;
+    animation: gmiPartIn 0.75s ease both;
+}
+
+@media (max-width: 768px) {
+    .gmi-slogan-bar .gmi-slogan-text .gmi-tagline-pill {
+        padding: 0.5rem 1.55rem;
+        white-space: normal;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .gmi-slogan-bar .gmi-slogan-text .gmi-tagline-pill {
+        width: min(94%, 360px);
+        padding: 0.45rem 1rem;
+        line-height: 1.45;
+    }
+}
+
 </style>
 </head>
 
@@ -1169,13 +1377,13 @@ li {
     </div>
 
     <nav class="gmi-nav-buttons" aria-label="Primary navigation">
-        <a href="/" class="gmi-current">Home</a>
-        <a href="about-us.php">About Us</a>
-        <a href="services.php">Services</a>
-        <a href="companies.php">Companies</a>
-        <a href="events.php">Events</a>
-        <a href="careers.php">Careers</a>
-        <a href="contact-us.php">Contact Us</a>
+        <a href="/" class="gmi-current">HOME</a>
+        <a href="about-us.php">ABOUT US</a>
+        <a href="services.php">SERVICES</a>
+        <a href="companies.php">COMPANIES</a>
+        <a href="events.php">EVENTS</a>
+        <a href="careers.php">CAREERS</a>
+        <a href="contact-us.php">CONTACT US</a>
     </nav>
 
     <button type="button" class="gmi-hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation" aria-controls="gmiNavMobile" aria-expanded="false">
@@ -1184,12 +1392,12 @@ li {
 
     <nav id="gmiNavMobile" class="gmi-nav-mobile" aria-label="Mobile navigation">
         <a href="/">Home</a>
-        <a href="about-us.php">About Us</a>
-        <a href="services.php">Services</a>
-        <a href="companies.php">Companies</a>
-        <a href="events.php">Events</a>
-        <a href="careers.php">Careers</a>
-        <a href="contact-us.php">Contact Us</a>
+        <a href="about-us.php">ABOUT US</a>
+        <a href="services.php">SERVICES</a>
+        <a href="companies.php">COMPANIES</a>
+        <a href="events.php">EVENTS</a>
+        <a href="careers.php">CAREERS</a>
+        <a href="contact-us.php">CONTACT US</a>
     </nav>
 </header>
 
@@ -1201,11 +1409,11 @@ li {
         <img class="hero-eagle" src="images/logo/global_eagle.png" alt="" decoding="async" loading="eager" fetchpriority="high" />
         <div class="hero-scrim"></div>
         <div class="hero-content">
-            <h1><span>Global Marine Group</span></h1>
-            <p>From liner shipping and NVOCC operations to port agency and marine technical services &mdash; we keep the world's cargo moving, safely and on time.</p>
+            <h1><span>GLOBAL MARINE GROUP</span></h1>
+
             <div class="hero-cta-group">
                 <a href="services.php" class="hero-btn-primary">Explore Our Services <i class="fas fa-arrow-right"></i></a>
-                <a href="about-us.php" class="hero-btn-secondary"><i class="fas fa-phone"></i> Abous Us</a>
+                <a href="about-us.php" class="hero-btn-secondary"><i class="fas fa-phone"></i> About Us</a>
             </div>
         </div>
         <div class="hero-scroll-cue">
@@ -1217,9 +1425,7 @@ li {
 
 <div class="gmi-slogan-bar">
     <div class="gmi-slogan-text">
-        <span class="gmi-part gmi-part-1">Connected by Sea</span>
-        <span class="gmi-separator">&middot;</span>
-        <span class="gmi-part gmi-part-2">Driven by Expertise</span>
+        <span class="gmi-tagline-pill">Connected by Sea. Driven by Expertise</span>
     </div>
 </div>
 
@@ -1374,11 +1580,11 @@ li {
             <div class="footer-offer-container">
                 <img src="images/logo/GMG 3L WHITE.png" alt="Global Marine Group" class="footer-offer-logo-img" decoding="async" loading="lazy">
                 <div class="footer-social-responsive">
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <?php if (!empty($footerContact['linkedin_url'])): ?><a href="<?= e($footerContact['linkedin_url']) ?>" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a><?php endif; ?>
+                    <?php if (!empty($footerContact['facebook_url'])): ?><a href="<?= e($footerContact['facebook_url']) ?>" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><?php endif; ?>
+                    <?php if (!empty($footerContact['instagram_url'])): ?><a href="<?= e($footerContact['instagram_url']) ?>" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a><?php endif; ?>
+                    <?php if (!empty($footerContact['tiktok_url'])): ?><a href="<?= e($footerContact['tiktok_url']) ?>" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a><?php endif; ?>
+                    <?php if (!empty($footerContact['youtube_url'])): ?><a href="<?= e($footerContact['youtube_url']) ?>" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a><?php endif; ?>
                 </div>
             </div>
 
@@ -1407,10 +1613,10 @@ li {
             <div>
                 <h5 class="footer-heading-responsive">Contact Us</h5>
                 <ul style="list-style:none;padding:0;margin:0;">
-                    <li class="footer-contact-responsive"><i class="fas fa-map-marker-alt"></i>292 R. A. De Mel Mawatha, Colombo, Sri Lanka</li>
-                    <li class="footer-contact-responsive"><i class="fas fa-phone"></i>+94 11 2 345 678</li>
-                    <li class="footer-contact-responsive"><i class="fas fa-envelope"></i>info@gmigroup.lk</li>
-                    <li class="footer-contact-responsive"><i class="fas fa-clock"></i>Mon - Fri: 8:30 AM - 5:30 PM</li>
+                    <li class="footer-contact-responsive"><i class="fas fa-map-marker-alt"></i><?= e($footerContact['address']) ?></li>
+                    <li class="footer-contact-responsive"><i class="fas fa-phone"></i><a href="tel:<?= e($footerPhoneHref) ?>" style="color:inherit;text-decoration:none;"><?= e($footerContact['phone']) ?></a></li>
+                    <li class="footer-contact-responsive"><i class="fas fa-envelope"></i><a href="mailto:<?= e($footerContact['email']) ?>" style="color:inherit;text-decoration:none;"><?= e($footerContact['email']) ?></a></li>
+                    <li class="footer-contact-responsive"><i class="fas fa-clock"></i><?= e($footerContact['office_hours']) ?></li>
                 </ul>
             </div>
 

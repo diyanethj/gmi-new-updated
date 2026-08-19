@@ -1590,13 +1590,13 @@ body.gmi-loading {
     </div>
 
     <nav class="gmi-nav-buttons" aria-label="Primary navigation">
-        <a href="/">Home</a>
-        <a href="about-us.php">About Us</a>
-        <a href="services.php" class="gmi-current">Services</a>
-        <a href="companies.php">Companies</a>
-        <a href="events.php">Events</a>
-        <a href="careers.php">Careers</a>
-        <a href="contact-us.php">Contact Us</a>
+        <a href="/">HOME</a>
+        <a href="about-us.php">ABOUT US</a>
+        <a href="services.php" class="gmi-current">SERVICES</a>
+        <a href="companies.php">COMPANIES</a>
+        <a href="events.php">EVENTS</a>
+        <a href="careers.php">CAREERS</a>
+        <a href="contact-us.php">CONTACT US</a>
     </nav>
 
     <button
@@ -1613,13 +1613,13 @@ body.gmi-loading {
     </button>
 
     <nav id="gmiNavMobile" class="gmi-nav-mobile" aria-label="Mobile navigation">
-        <a href="/">Home</a>
-        <a href="about-us.php">About Us</a>
-        <a href="services.php" class="gmi-current">Services</a>
-        <a href="companies.php">Companies</a>
-        <a href="events.php">Events</a>
-        <a href="careers.php">Careers</a>
-        <a href="contact-us.php">Contact Us</a>
+        <a href="/">HOME</a>
+        <a href="about-us.php">ABOUT US</a>
+        <a href="services.php" class="gmi-current">SERVICES</a>
+        <a href="companies.php">COMPANIES</a>
+        <a href="events.php">EVENTS</a>
+        <a href="careers.php">CAREERS</a>
+        <a href="contact-us.php">CONTACT US</a>
     </nav>
 
 </header>
@@ -2470,23 +2470,23 @@ body.gmi-loading {
 
                 <div class="footer-social-responsive">
 
-                    <a href="#" aria-label="LinkedIn">
+                    <a id="footerLinkedIn" href="#" aria-label="LinkedIn" style="display:none;">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
 
-                    <a href="#" aria-label="Facebook">
+                    <a id="footerFacebook" href="#" aria-label="Facebook" style="display:none;">
                         <i class="fab fa-facebook-f"></i>
                     </a>
 
-                    <a href="#" aria-label="Instagram">
+                    <a id="footerInstagram" href="#" aria-label="Instagram" style="display:none;">
                         <i class="fab fa-instagram"></i>
                     </a>
 
-                    <a href="#" aria-label="TikTok">
+                    <a id="footerTikTok" href="#" aria-label="TikTok" style="display:none;">
                         <i class="fab fa-tiktok"></i>
                     </a>
 
-                    <a href="#" aria-label="YouTube">
+                    <a id="footerYouTube" href="#" aria-label="YouTube" style="display:none;">
                         <i class="fab fa-youtube"></i>
                     </a>
 
@@ -2595,22 +2595,22 @@ body.gmi-loading {
 
                     <li class="footer-contact-responsive">
                         <i class="fas fa-map-marker-alt"></i>
-                        292 R. A. De Mel Mawatha, Colombo, Sri Lanka
+                        <span id="footerAddress">292 R. A. De Mel Mawatha, Colombo, Sri Lanka</span>
                     </li>
 
                     <li class="footer-contact-responsive">
                         <i class="fas fa-phone"></i>
-                        +94 11 2 345 678
+                        <a id="footerPhone" href="tel:+94112345678" style="color:inherit;text-decoration:none;">+94 11 2 345 678</a>
                     </li>
 
                     <li class="footer-contact-responsive">
                         <i class="fas fa-envelope"></i>
-                        info@gmigroup.lk
+                        <a id="footerEmail" href="mailto:info@gmigroup.lk" style="color:inherit;text-decoration:none;">info@gmigroup.lk</a>
                     </li>
 
                     <li class="footer-contact-responsive">
                         <i class="fas fa-clock"></i>
-                        Mon - Fri: 8:30 AM - 5:30 PM
+                        <span id="footerOfficeHours">Mon - Fri: 8:30 AM - 5:30 PM</span>
                     </li>
 
                 </ul>
@@ -3194,6 +3194,86 @@ body.gmi-loading {
         }
     );
 
+})();
+</script>
+
+
+<script>
+/* =========================================================
+   FOOTER CONTACT ONLY
+   Loads admin-managed footer details without bootstrapping
+   this Services page, so existing backgrounds/loader remain
+   exactly as in the original page.
+   ========================================================= */
+(function () {
+    'use strict';
+
+    function setText(id, value) {
+        var element = document.getElementById(id);
+        if (element && typeof value === 'string' && value.trim() !== '') {
+            element.textContent = value;
+        }
+    }
+
+    function setSocial(id, url) {
+        var element = document.getElementById(id);
+        if (!element) return;
+
+        if (typeof url === 'string' && /^https?:\/\//i.test(url.trim())) {
+            element.href = url.trim();
+            element.target = '_blank';
+            element.rel = 'noopener noreferrer';
+            element.style.display = 'flex';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+
+    fetch('footer-contact-public.php', {
+        method: 'GET',
+        credentials: 'same-origin',
+        cache: 'no-store',
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(function (response) {
+        if (!response.ok) {
+            throw new Error('Footer contact request failed');
+        }
+        return response.json();
+    })
+    .then(function (payload) {
+        if (!payload || payload.success !== true || !payload.data) {
+            return;
+        }
+
+        var data = payload.data;
+
+        setText('footerAddress', data.address || '');
+        setText('footerOfficeHours', data.office_hours || '');
+
+        var phone = document.getElementById('footerPhone');
+        if (phone && typeof data.phone === 'string' && data.phone.trim() !== '') {
+            phone.textContent = data.phone;
+            phone.href = 'tel:' + data.phone.replace(/[^0-9+]/g, '');
+        }
+
+        var email = document.getElementById('footerEmail');
+        if (email && typeof data.email === 'string' && data.email.trim() !== '') {
+            email.textContent = data.email;
+            email.href = 'mailto:' + data.email.trim();
+        }
+
+        setSocial('footerLinkedIn', data.linkedin_url || '');
+        setSocial('footerFacebook', data.facebook_url || '');
+        setSocial('footerInstagram', data.instagram_url || '');
+        setSocial('footerTikTok', data.tiktok_url || '');
+        setSocial('footerYouTube', data.youtube_url || '');
+    })
+    .catch(function () {
+        /* Keep the original footer fallback values if the API is unavailable. */
+    });
 })();
 </script>
 

@@ -25,14 +25,39 @@ final class ApplicationController extends Controller
     public function index(): void
     {
         Auth::requirePermission('careers.applications.view');
-        $this->render('admin/careers/applications-index', ['applications' => $this->applications->all()], 'admin/layouts/app');
+
+        $companyFilter = $this->companyFilter((string) ($_GET['company'] ?? ''));
+        $vacancyFilter = $this->vacancyFilter($_GET['vacancy'] ?? null);
+
+        $this->render(
+            'admin/careers/applications-index',
+            [
+                'applications' => $this->applications->all($companyFilter, $vacancyFilter),
+                'companyFilter' => $companyFilter,
+                'vacancyFilter' => $vacancyFilter,
+                'vacancyOptions' => $this->applications->vacancyFilterOptions($companyFilter),
+            ],
+            'admin/layouts/app'
+        );
     }
 
     public function view(): void
     {
         Auth::requirePermission('careers.applications.view');
+
         $application = $this->requiredApplication(false);
-        $this->render('admin/careers/application-view', ['application' => $application], 'admin/layouts/app');
+        $companyFilter = $this->companyFilter((string) ($_GET['company'] ?? ''));
+        $vacancyFilter = $this->vacancyFilter($_GET['vacancy'] ?? null);
+
+        $this->render(
+            'admin/careers/application-view',
+            [
+                'application' => $application,
+                'companyFilter' => $companyFilter,
+                'vacancyFilter' => $vacancyFilter,
+            ],
+            'admin/layouts/app'
+        );
     }
 
     public function download(): void
@@ -62,7 +87,39 @@ final class ApplicationController extends Controller
         $this->uploader->delete((string) $application['cv_path']);
         AuditLogger::log('delete', 'job_application', (int) $application['id'], ['email' => $application['email']]);
         flash('success', 'Application and CV deleted.');
-        redirect(admin_url('careers-applications'));
+
+        $companyFilter = $this->companyFilter((string) ($_POST['company_filter'] ?? ''));
+        $vacancyFilter = $this->vacancyFilter($_POST['vacancy_filter'] ?? null);
+
+        $params = [];
+
+        if ($companyFilter !== '') {
+            $params['company'] = $companyFilter;
+        }
+
+        if ($vacancyFilter !== null) {
+            $params['vacancy'] = $vacancyFilter;
+        }
+
+        redirect(admin_url('careers-applications', $params));
+    }
+
+    private function companyFilter(string $company): string
+    {
+        $company = strtoupper(trim($company));
+
+        return in_array($company, ['GMG', 'GMS'], true) ? $company : '';
+    }
+
+    private function vacancyFilter(mixed $vacancy): ?int
+    {
+        if ($vacancy === null || $vacancy === '') {
+            return null;
+        }
+
+        $value = filter_var($vacancy, FILTER_VALIDATE_INT);
+
+        return $value !== false && $value > 0 ? (int) $value : null;
     }
 
     private function requiredApplication(bool $post): array

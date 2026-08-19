@@ -1,3 +1,32 @@
+<?php
+try {
+    $footerContact = (
+        new \Gmg\Events\Models\FooterContact(
+            \Gmg\Events\Core\Database::connection()
+        )
+    )->get();
+} catch (\Throwable $exception) {
+    error_log('Footer contact load failed on careers page: ' . $exception->getMessage());
+
+    $footerContact = [
+        'address' => '292 R. A. De Mel Mawatha, Colombo, Sri Lanka',
+        'phone' => '+94 11 2 345 678',
+        'email' => 'info@gmigroup.lk',
+        'office_hours' => 'Mon - Fri: 8:30 AM - 5:30 PM',
+        'linkedin_url' => null,
+        'facebook_url' => null,
+        'instagram_url' => null,
+        'tiktok_url' => null,
+        'youtube_url' => null,
+    ];
+}
+
+$footerPhoneHref = preg_replace(
+    '/[^0-9+]/',
+    '',
+    (string) ($footerContact['phone'] ?? '')
+);
+?>
 <!doctype html>
 <html class="no-js gmi-loading-root" lang="en" style="background:#071525;">
 <head>
@@ -1154,25 +1183,25 @@ body {
         </a>
     </div>
     <nav class="gmi-nav-buttons" aria-label="Primary navigation">
-        <a href="/">Home</a>
-        <a href="about-us.php">About Us</a>
-        <a href="services.php">Services</a>
-        <a href="companies.php">Companies</a>
-        <a href="events.php">Events</a>
-        <a href="careers.php" class="gmi-current">Careers</a>
-        <a href="contact-us.php">Contact Us</a>
+        <a href="/">HOME</a>
+        <a href="about-us.php">ABOUT US</a>
+        <a href="services.php">SERVICES</a>
+        <a href="companies.php">COMPANIES</a>
+        <a href="events.php">EVENTS</a>
+        <a href="careers.php" class="gmi-current">CAREERS</a>
+        <a href="contact-us.php">CONTACT US</a>
     </nav>
     <button type="button" class="gmi-hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation" aria-controls="gmiNavMobile" aria-expanded="false">
         <span></span><span></span><span></span>
     </button>
     <nav id="gmiNavMobile" class="gmi-nav-mobile" aria-label="Mobile navigation">
-        <a href="/">Home</a>
-        <a href="about-us.php">About Us</a>
-        <a href="services.php">Services</a>
-        <a href="companies.php">Companies</a>
-        <a href="events.php">Events</a>
-        <a href="careers.php" class="gmi-current">Careers</a>
-        <a href="contact-us.php">Contact Us</a>
+        <a href="/">HOME</a>
+        <a href="about-us.php">ABOUT US</a>
+        <a href="services.php">SERVICES</a>
+        <a href="companies.php">COMPANIES</a>
+        <a href="events.php">EVENTS</a>
+        <a href="careers.php" class="gmi-current">CAREERS</a>
+        <a href="contact-us.php">CONTACT US</a>
     </nav>
 </header>
 
@@ -1301,11 +1330,25 @@ body {
             <div class="footer-offer-container">
                 <img src="images/logo/GMG 3L WHITE.png" alt="Global Marine Group" class="footer-offer-logo-img" decoding="async" loading="lazy">
                 <div class="footer-social-responsive">
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <?php if (!empty($footerContact['linkedin_url'])): ?>
+                        <a href="<?= e((string) $footerContact['linkedin_url']) ?>" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <?php endif; ?>
+
+                    <?php if (!empty($footerContact['facebook_url'])): ?>
+                        <a href="<?= e((string) $footerContact['facebook_url']) ?>" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <?php endif; ?>
+
+                    <?php if (!empty($footerContact['instagram_url'])): ?>
+                        <a href="<?= e((string) $footerContact['instagram_url']) ?>" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <?php endif; ?>
+
+                    <?php if (!empty($footerContact['tiktok_url'])): ?>
+                        <a href="<?= e((string) $footerContact['tiktok_url']) ?>" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <?php endif; ?>
+
+                    <?php if (!empty($footerContact['youtube_url'])): ?>
+                        <a href="<?= e((string) $footerContact['youtube_url']) ?>" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <?php endif; ?>
                 </div>
             </div>
             <div>
@@ -1331,10 +1374,29 @@ body {
             <div>
                 <h5 class="footer-heading-responsive">Contact Us</h5>
                 <ul style="list-style:none;padding:0;margin:0;">
-                    <li class="footer-contact-responsive"><i class="fas fa-map-marker-alt"></i>292 R. A. De Mel Mawatha, Colombo, Sri Lanka</li>
-                    <li class="footer-contact-responsive"><i class="fas fa-phone"></i>+94 11 2 345 678</li>
-                    <li class="footer-contact-responsive"><i class="fas fa-envelope"></i>info@gmigroup.lk</li>
-                    <li class="footer-contact-responsive"><i class="fas fa-clock"></i>Mon - Fri: 8:30 AM - 5:30 PM</li>
+                    <li class="footer-contact-responsive">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span><?= e((string) ($footerContact['address'] ?? '')) ?></span>
+                    </li>
+
+                    <li class="footer-contact-responsive">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:<?= e((string) $footerPhoneHref) ?>" style="color:inherit;text-decoration:none;">
+                            <?= e((string) ($footerContact['phone'] ?? '')) ?>
+                        </a>
+                    </li>
+
+                    <li class="footer-contact-responsive">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:<?= e((string) ($footerContact['email'] ?? '')) ?>" style="color:inherit;text-decoration:none;">
+                            <?= e((string) ($footerContact['email'] ?? '')) ?>
+                        </a>
+                    </li>
+
+                    <li class="footer-contact-responsive">
+                        <i class="fas fa-clock"></i>
+                        <span><?= e((string) ($footerContact['office_hours'] ?? '')) ?></span>
+                    </li>
                 </ul>
             </div>
             <div class="footer-great-text">

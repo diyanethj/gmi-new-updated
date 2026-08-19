@@ -11,14 +11,76 @@ final class JobApplication
     {
     }
 
-    public function all(): array
+    public function all(string $company = '', ?int $vacancyId = null): array
     {
-        return $this->db->query(
-            'SELECT ja.*, v.position AS current_vacancy_position, v.company_name AS current_company_name
-             FROM job_applications ja
-             LEFT JOIN job_vacancies v ON v.id = ja.vacancy_id
-             ORDER BY ja.created_at DESC, ja.id DESC'
-        )->fetchAll();
+        $company = strtoupper(trim($company));
+
+        $sql = 'SELECT ja.*, v.position AS current_vacancy_position, v.company_name AS current_company_name
+                FROM job_applications ja
+                LEFT JOIN job_vacancies v ON v.id = ja.vacancy_id';
+
+        $conditions = [];
+        $params = [];
+
+        if (in_array($company, ['GMG', 'GMS'], true)) {
+            $conditions[] = 'ja.company = :company';
+            $params[':company'] = $company;
+        }
+
+        if ($vacancyId !== null && $vacancyId > 0) {
+            $conditions[] = 'ja.vacancy_id = :vacancy_id';
+            $params[':vacancy_id'] = $vacancyId;
+        }
+
+        if ($conditions !== []) {
+            $sql .= ' WHERE ' . implode(' AND ', $conditions);
+        }
+
+        $sql .= ' ORDER BY ja.created_at DESC, ja.id DESC';
+
+        $stmt = $this->db->prepare($sql);
+
+        foreach ($params as $name => $value) {
+            if ($name === ':vacancy_id') {
+                $stmt->bindValue($name, (int) $value, PDO::PARAM_INT);
+            } else {
+                $stmt->bindValue($name, (string) $value, PDO::PARAM_STR);
+            }
+        }
+
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+
+    public function vacancyFilterOptions(string $company = ''): array
+    {
+        $company = strtoupper(trim($company));
+
+        $sql = 'SELECT
+                    ja.vacancy_id,
+                    MAX(ja.vacancy_position) AS vacancy_position,
+                    MAX(ja.company) AS company,
+                    MAX(ja.company_name) AS company_name,
+                    COUNT(*) AS application_count
+                FROM job_applications ja';
+
+        $params = [];
+
+        if (in_array($company, ['GMG', 'GMS'], true)) {
+            $sql .= ' WHERE ja.company = :company';
+            $params[':company'] = $company;
+        }
+
+        $sql .= ' GROUP BY ja.vacancy_id
+                  ORDER BY MAX(ja.company) ASC,
+                           MAX(ja.vacancy_position) ASC,
+                           ja.vacancy_id DESC';
+
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute($params);
+
+        return $stmt->fetchAll();
     }
 
     public function find(int $id): ?array

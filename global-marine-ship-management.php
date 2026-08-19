@@ -12,15 +12,15 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="title" content="Global Marine Group">
-    <meta name="description" content="Contact Global Marine Group companies in Sri Lanka, Singapore and the United Arab Emirates, including Global Marine Group, Global Feeders Lanka, MPSS Shipping Pte Ltd and GMG Marine International LLC.">
-    <meta name="keywords" content="Global Marine Group contact, Global Feeders Lanka, MPSS Shipping Singapore, GMG Marine International Dubai, Colombo office, Singapore office, Dubai office">
+    <meta name="title" content="Global Marine Ship Management - Global Marine Group">
+    <meta name="description" content="Global Marine Ship Management - professional ship management, technical management, crew management, marine consultancy, safety and compliance services.">
+    <meta name="keywords" content="Global Marine Ship Management, GMSM, ship management, crew management, technical management, marine consultancy, safety compliance, Sri Lanka">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
     <meta name="author" content="alex">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>Contact Us - Global Marine Group</title>
+    <title>Global Marine Ship Management - Global Marine Group</title>
 
     <link rel="shortcut icon" type="image/x-icon" href="images/logo/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -2343,6 +2343,41 @@ body {
 
 </head>
 
+<style id="gmsm-concept-page-style">
+    /* PDF concept content placed between the existing shared header and footer. */
+    .gmsm-concept-page {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background: #ffffff;
+    }
+
+    .gmsm-concept-shell {
+        width: 100%;
+        max-width: 2049px;
+        margin: 0 auto;
+        padding: 0;
+        background: #ffffff;
+    }
+
+    .gmsm-concept-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        object-fit: contain;
+    }
+
+    @media (max-width: 768px) {
+        .gmsm-concept-shell {
+            max-width: none;
+        }
+    }
+</style>
+
 <body class="gmi-loading">
     <!-- Loader -->
     <div id="loader-wrapper">
@@ -2366,10 +2401,10 @@ body {
             <a href="/">HOME</a>
             <a href="about-us.php">ABOUT US</a>
             <a href="services.php">SERVICES</a>
-            <a href="companies.php">COMPANIES</a>
+            <a href="companies.php" class="gmi-current">COMPANIES</a>
             <a href="events.php">EVENTS</a>
             <a href="careers.php">CAREERS</a>
-            <a href="contact-us.php" class="gmi-current">CONTACT US</a>
+            <a href="contact-us.php">CONTACT US</a>
         </nav>
 
         <button type="button" class="gmi-hamburger" aria-label="Toggle navigation" aria-controls="gmiNavMobile" aria-expanded="false" onclick="toggleMobileNav()">
@@ -2382,385 +2417,24 @@ body {
             <a href="/">HOME</a>
             <a href="about-us.php">ABOUT US</a>
             <a href="services.php">SERVICES</a>
-            <a href="companies.php">COMPANIES</a>
+            <a href="companies.php" class="gmi-current">COMPANIES</a>
             <a href="events.php">EVENTS</a>
             <a href="careers.php">CAREERS</a>
-            <a href="contact-us.php" class="gmi-current">CONTACT US</a>
+            <a href="contact-us.php">CONTACT US</a>
         </nav>
     </header>
 
-    <!-- Breadcrumb -->
-    <section class="breadcrumb-section">
-        <div class="container">
-            <div class="breadcrumb-area">
-                <h2 class="breadcrumb-title reveal">Contact Us</h2>
-                <ul class="breadcrumb-ul">
-                    <li><a href="/">Home</a></li>
-                    <li class="active-breadcrumb">Contact Us</li>
-                </ul>
-            </div>
+    <!-- GMSM PDF-designed content -->
+    <main class="gmsm-concept-page" id="gmsm">
+        <div class="gmsm-concept-shell">
+            <img
+                src="images/gmsm/gmsm-page-content.jpg"
+                alt="Global Marine Ship Management overview, leadership, service capabilities and why choose us"
+                class="gmsm-concept-image"
+                loading="eager"
+                decoding="async"
+            >
         </div>
-    </section>
-<!-- Global Locations -->
-
-    <!-- Fixed country cityscape background.
-         The image stays in place while content scrolls. -->
-    <div id="gmiCountryBgStage" class="gmi-country-bg-stage" aria-hidden="true">
-        <div id="gmiCountryBgA" class="gmi-country-bg-layer is-active"></div>
-        <div id="gmiCountryBgB" class="gmi-country-bg-layer"></div>
-        <div class="gmi-country-bg-shade"></div>
-    </div>
-
-<main id="locations" class="locations-section">
-
-        <div class="container">
-            <div class="section-intro global-locations-intro reveal">
-                <span class="section-eyebrow">Our Global Locations</span>
-                <h1>Connect With Us Worldwide</h1>
-                <p>
-                    Find Global Marine Group companies in Sri Lanka, Singapore and the
-                    United Arab Emirates, and connect with the relevant team for shipping,
-                    marine, logistics and agency-related inquiries.
-                </p>
-            </div>
-        </div>
-
-
-        <!-- ==================================================
-             SRI LANKA — COLOMBO
-             ================================================== -->
-        <section id="sri-lanka" class="country-office-section country-sri-lanka">
-
-            <div class="country-background" aria-hidden="true"></div>
-            <div class="country-overlay" aria-hidden="true"></div>
-
-            <div class="container country-content">
-
-                <div class="country-heading reveal">
-                    <span class="country-kicker">
-                        <i class="fas fa-location-dot"></i>
-                        Sri Lanka
-                    </span>
-
-                    <h2>Colombo</h2>
-
-                    <p>
-                        Connect with our Sri Lankan teams for shipping, logistics,
-                        marine services and agency-related inquiries.
-                    </p>
-                </div>
-
-
-                <div class="office-grid country-office-grid">
-
-                    <!-- Global Feeders Lanka -->
-                    <article class="office-card reveal">
-
-                        <div class="office-card-top">
-                            <span class="office-icon">
-                                <i class="fas fa-ship"></i>
-                            </span>
-
-                            <div>
-                                <h2>Global Feeders Lanka (Pvt) Ltd</h2>
-                                <span class="office-type">Colombo Office</span>
-                            </div>
-                        </div>
-
-                        <div class="office-details">
-
-                            <div class="office-detail">
-                                <i class="fas fa-location-dot"></i>
-                                <div>
-                                    <strong>Address</strong>
-                                    1st Floor, Rotunda Towers, 109, Galle Road<br>
-                                    Colombo 00300, Sri Lanka
-                                </div>
-                            </div>
-
-                            <div class="office-detail">
-                                <i class="fas fa-phone"></i>
-                                <div>
-                                    <strong>Phone</strong>
-                                    <a href="tel:+94112027217">
-                                        +94 112 027 217
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="office-detail">
-                                <i class="fas fa-envelope"></i>
-                                <div>
-                                    <strong>Email</strong>
-                                    <a href="mailto:info@globalfeeders.lk">
-                                        info@globalfeeders.lk
-                                    </a>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- Global Marine Group Head Office -->
-                    <article class="office-card reveal">
-
-                        <div class="office-card-top">
-                            <span class="office-icon">
-                                <i class="fas fa-building"></i>
-                            </span>
-
-                            <div>
-                                <h2>Global Marine Group</h2>
-                                <span class="office-type">Head Office</span>
-                            </div>
-                        </div>
-
-                        <div class="office-details">
-
-                            <div class="office-detail">
-                                <i class="fas fa-location-dot"></i>
-                                <div>
-                                    <strong>Address</strong>
-                                    <span id="gmgOfficeAddress">No. 292, R. A. De Mel Mawatha, Colombo 00300, Sri Lanka</span>
-                                </div>
-                            </div>
-
-                            <div class="office-detail">
-                                <i class="fas fa-phone"></i>
-                                <div>
-                                    <strong>Phone</strong>
-                                    <a id="gmgOfficePhone" href="tel:+94114614521">
-                                        +94 114 614 521
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="office-detail">
-                                <i class="fas fa-envelope"></i>
-                                <div>
-                                    <strong>Email</strong>
-                                    <a id="gmgOfficeEmail" href="mailto:info@gmigroup.lk">
-                                        info@gmigroup.lk
-                                    </a>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-
-                <section
-                    class="map-shell country-map-shell reveal"
-                    aria-label="Global Marine Group Colombo location"
-                >
-                    <div class="map-heading">
-
-                        <div>
-                            <h2>Find Us in Colombo</h2>
-                            <p>
-                                Global Marine Group Head Office —
-                                <span id="gmgMapAddress">No. 292, R. A. De Mel Mawatha, Colombo 00300, Sri Lanka</span>
-                            </p>
-                        </div>
-
-                        <a
-                            class="map-link"
-                            id="gmgMapLink"
-                            href="https://www.google.com/maps/search/?api=1&query=292%20R.A.%20De%20Mel%20Mawatha%2C%20Colombo%2000300%2C%20Sri%20Lanka"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Open in Google Maps
-                            <i class="fas fa-arrow-up-right-from-square"></i>
-                        </a>
-
-                    </div>
-
-                    <iframe
-                        class="map-frame"
-                        id="gmgMapFrame"
-                        title="Global Marine Group, Colombo"
-                        src="https://www.google.com/maps?q=292%20R.A.%20De%20Mel%20Mawatha%2C%20Colombo%2000300%2C%20Sri%20Lanka&amp;output=embed"
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        allowfullscreen
-                    ></iframe>
-
-                </section>
-
-            </div>
-
-        </section>
-
-
-        <!-- ==================================================
-             SINGAPORE
-             ================================================== -->
-        <section id="singapore" class="country-office-section country-singapore">
-
-            <div class="country-background" aria-hidden="true"></div>
-            <div class="country-overlay" aria-hidden="true"></div>
-
-            <div class="container country-content">
-
-                <div class="country-heading reveal">
-                    <span class="country-kicker">
-                        <i class="fas fa-location-dot"></i>
-                        Singapore
-                    </span>
-
-                    <h2>Singapore</h2>
-
-                    <p>
-                        Connect with MPSS Shipping Pte Ltd for regional shipping
-                        and maritime business inquiries.
-                    </p>
-                </div>
-
-
-                <div class="office-grid country-office-grid country-office-grid-single">
-
-                    <article class="office-card reveal">
-
-                        <div class="office-card-top">
-                            <span class="office-icon">
-                                <i class="fas fa-ship"></i>
-                            </span>
-
-                            <div>
-                                <h2>MPSS Shipping Pte Ltd</h2>
-                                <span class="office-type">Singapore Office</span>
-                            </div>
-                        </div>
-
-                        <div class="office-details">
-
-                            <div class="office-detail">
-                                <i class="fas fa-location-dot"></i>
-                                <div>
-                                    <strong>Address</strong>
-                                    8, Marine View, Asia Square Tower 1,<br>
-                                    #43-01, #42-01, Singapore 018960
-                                </div>
-                            </div>
-
-                            <div class="office-detail">
-                                <i class="fas fa-phone"></i>
-                                <div>
-                                    <strong>Phone</strong>
-                                    <a href="tel:+6564991888">
-                                        +65 6499 1888
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="office-detail">
-                                <i class="fas fa-envelope"></i>
-                                <div>
-                                    <strong>Email</strong>
-                                    <a href="mailto:info@gmigroup.lk">
-                                        info@gmigroup.lk
-                                    </a>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ==================================================
-             UNITED ARAB EMIRATES — DUBAI
-             ================================================== -->
-        <section id="uae" class="country-office-section country-uae">
-
-            <div class="country-background" aria-hidden="true"></div>
-            <div class="country-overlay" aria-hidden="true"></div>
-
-            <div class="container country-content">
-
-                <div class="country-heading reveal">
-                    <span class="country-kicker">
-                        <i class="fas fa-location-dot"></i>
-                        United Arab Emirates
-                    </span>
-
-                    <h2>Dubai</h2>
-
-                    <p>
-                        Connect with GMG Marine International LLC for international
-                        marine, shipping and regional business inquiries.
-                    </p>
-                </div>
-
-
-                <div class="office-grid country-office-grid country-office-grid-single">
-
-                    <article class="office-card reveal">
-
-                        <div class="office-card-top">
-                            <span class="office-icon">
-                                <i class="fas fa-earth-asia"></i>
-                            </span>
-
-                            <div>
-                                <h2>GMG Marine International LLC</h2>
-                                <span class="office-type">Dubai Office</span>
-                            </div>
-                        </div>
-
-                        <div class="office-details">
-
-                            <div class="office-detail">
-                                <i class="fas fa-location-dot"></i>
-                                <div>
-                                    <strong>Address</strong>
-                                    Meydan Grandstand, 6th floor, Meydan Road,<br>
-                                    Nad Al Sheba, Dubai, UAE
-                                </div>
-                            </div>
-
-                            <div class="office-detail">
-                                <i class="fas fa-phone"></i>
-                                <div>
-                                    <strong>Phone</strong>
-                                    <a href="tel:+971586940667">
-                                        +971 58 694 0667
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="office-detail">
-                                <i class="fas fa-envelope"></i>
-                                <div>
-                                    <strong>Email</strong>
-                                    <a href="mailto:info@gmigroup.lk">
-                                        info@gmigroup.lk
-                                    </a>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
     </main>
 
     <!-- Footer -->

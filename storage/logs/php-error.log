@@ -26,3 +26,27 @@ Stack trace:
 [13-Aug-2026 16:03:33 Asia/Colombo] Crew careers page failed: View not found: public/careers-crew
 [13-Aug-2026 16:03:42 Asia/Colombo] Crew careers page failed: View not found: public/careers-crew
 [14-Aug-2026 09:38:35 Asia/Colombo] Homepage schema preflight failed: SQLSTATE[HY000] [1045] Access denied for user 'u838229316_gmi_new'@'localhost' (using password: YES)
+[14-Aug-2026 10:07:38 Asia/Colombo] PHP Warning:  require(C:\wamp64\www\gmigroup\app\Views/bootstrap.php): Failed to open stream: No such file or directory in C:\wamp64\www\gmigroup\app\Views\admin\dashboard.php on line 4
+[14-Aug-2026 10:07:38 Asia/Colombo] PHP Stack trace:
+[14-Aug-2026 10:07:38 Asia/Colombo] PHP   1. {main}() C:\wamp64\www\gmigroup\admin\index.php:0
+[14-Aug-2026 10:07:38 Asia/Colombo] PHP   2. Gmg\Events\Controllers\Admin\DashboardController->index() C:\wamp64\www\gmigroup\admin\index.php:134
+[14-Aug-2026 10:07:38 Asia/Colombo] PHP   3. Gmg\Events\Core\Controller->render($view = 'admin/dashboard', $data = ['counts' => ['total' => 1, 'published' => 1, 'drafts' => 0], 'adminCount' => 1, 'partnerCount' => 9, 'companyCount' => 9, 'vacancyCount' => 2, 'applicationCount' => 1, 'recentEvents' => [0 => [...]]], $layout = 'admin/layouts/app') C:\wamp64\www\gmigroup\app\Controllers\Admin\DashboardController.php:29
+[14-Aug-2026 10:07:38 Asia/Colombo] PHP   4. require() C:\wamp64\www\gmigroup\app\Core\Controller.php:23
+[14-Aug-2026 10:07:38 Asia/Colombo] [2026-08-14T10:07:38+05:30] Failed opening required 'C:\wamp64\www\gmigroup\app\Views/bootstrap.php' (include_path='.;C:\php\pear') in C:\wamp64\www\gmigroup\app\Views\admin\dashboard.php:4
+#0 C:\wamp64\www\gmigroup\app\Core\Controller.php(23): require()
+#1 C:\wamp64\www\gmigroup\app\Controllers\Admin\DashboardController.php(29): Gmg\Events\Core\Controller->render('admin/dashboard', Array, 'admin/layouts/a...')
+#2 C:\wamp64\www\gmigroup\admin\index.php(134): Gmg\Events\Controllers\Admin\DashboardController->index()
+#3 {main}
+
+[14-Aug-2026 10:07:39 Asia/Colombo] PHP Warning:  require(C:\wamp64\www\gmigroup\app\Views/bootstrap.php): Failed to open stream: No such file or directory in C:\wamp64\www\gmigroup\app\Views\admin\dashboard.php on line 4
+[14-Aug-2026 10:07:39 Asia/Colombo] PHP Stack trace:
+[14-Aug-2026 10:07:39 Asia/Colombo] PHP   1. {main}() C:\wamp64\www\gmigroup\admin\index.php:0
+[14-Aug-2026 10:07:39 Asia/Colombo] PHP   2. Gmg\Events\Controllers\Admin\DashboardController->index() C:\wamp64\www\gmigroup\admin\index.php:134
+[14-Aug-2026 10:07:39 Asia/Colombo] PHP   3. Gmg\Events\Core\Controller->render($view = 'admin/dashboard', $data = ['counts' => ['total' => 1, 'published' => 1, 'drafts' => 0], 'adminCount' => 1, 'partnerCount' => 9, 'companyCount' => 9, 'vacancyCount' => 2, 'applicationCount' => 1, 'recentEvents' => [0 => [...]]], $layout = 'admin/layouts/app') C:\wamp64\www\gmigroup\app\Controllers\Admin\DashboardController.php:29
+[14-Aug-2026 10:07:39 Asia/Colombo] PHP   4. require() C:\wamp64\www\gmigroup\app\Core\Controller.php:23
+[14-Aug-2026 10:07:39 Asia/Colombo] [2026-08-14T10:07:39+05:30] Failed opening required 'C:\wamp64\www\gmigroup\app\Views/bootstrap.php' (include_path='.;C:\php\pear') in C:\wamp64\www\gmigroup\app\Views\admin\dashboard.php:4
+#0 C:\wamp64\www\gmigroup\app\Core\Controller.php(23): require()
+#1 C:\wamp64\www\gmigroup\app\Controllers\Admin\DashboardController.php(29): Gmg\Events\Core\Controller->render('admin/dashboard', Array, 'admin/layouts/a...')
+#2 C:\wamp64\www\gmigroup\admin\index.php(134): Gmg\Events\Controllers\Admin\DashboardController->index()
+#3 {main}
+

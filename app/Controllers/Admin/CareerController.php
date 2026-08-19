@@ -23,7 +23,21 @@ final class CareerController extends Controller
     public function index(): void
     {
         Auth::requirePermission('careers.vacancies.view');
-        $this->render('admin/careers/vacancies-index', ['vacancies' => $this->vacancies->adminAll()], 'admin/layouts/app');
+
+        $companyFilter = strtoupper(trim((string) ($_GET['company'] ?? '')));
+        if (!in_array($companyFilter, ['GMG', 'GMS'], true)) {
+            $companyFilter = '';
+        }
+
+        $this->render(
+            'admin/careers/vacancies-index',
+            [
+                'vacancies' => $this->vacancies->adminAll($companyFilter),
+                'companyFilter' => $companyFilter,
+            ],
+            'admin/layouts/app'
+        );
+
         clear_form_state();
     }
 
@@ -109,6 +123,12 @@ final class CareerController extends Controller
         $this->vacancies->updateOrders($orders, (int) Auth::id());
         AuditLogger::log('order', 'job_vacancy', null, ['count' => count($orders)]);
         flash('success', 'Vacancy order updated.');
+
+        $companyFilter = strtoupper(trim((string) ($_POST['company_filter'] ?? '')));
+        if (in_array($companyFilter, ['GMG', 'GMS'], true)) {
+            redirect(admin_url('careers-vacancies', ['company' => $companyFilter]));
+        }
+
         redirect(admin_url('careers-vacancies'));
     }
 

@@ -16,15 +16,21 @@ final class Permission
                 'events.delete' => 'Delete events',
                 'events.order' => 'Change event order',
             ],
+
             'Homepage' => [
                 'counters.view' => 'View homepage counters',
                 'counters.edit' => 'Edit homepage counters',
+
+                'footer_contact.view' => 'View footer contact details',
+                'footer_contact.edit' => 'Edit footer contact details',
+
                 'partners.view' => 'View business partners',
                 'partners.create' => 'Create business partners',
                 'partners.edit' => 'Edit business partners',
                 'partners.delete' => 'Delete business partners',
                 'partners.order' => 'Change business partner order',
             ],
+
             'Companies Page' => [
                 'companies.view' => 'View companies',
                 'companies.create' => 'Create companies',
@@ -32,6 +38,7 @@ final class Permission
                 'companies.delete' => 'Delete companies',
                 'companies.order' => 'Change company order',
             ],
+
             'Board of Directors' => [
                 'about.directors.view' => 'View directors',
                 'about.directors.create' => 'Create directors',
@@ -39,6 +46,7 @@ final class Permission
                 'about.directors.delete' => 'Delete directors',
                 'about.directors.order' => 'Change director order',
             ],
+
             'Management Team' => [
                 'about.management.view' => 'View management team',
                 'about.management.create' => 'Create management members',
@@ -46,6 +54,7 @@ final class Permission
                 'about.management.delete' => 'Delete management members',
                 'about.management.order' => 'Change management order',
             ],
+
             'Our Teams' => [
                 'about.teams.view' => 'View company teams',
                 'about.teams.create' => 'Create company teams',
@@ -53,6 +62,7 @@ final class Permission
                 'about.teams.delete' => 'Delete company teams',
                 'about.teams.order' => 'Change company team order',
             ],
+
             'Career Vacancies' => [
                 'careers.vacancies.view' => 'View vacancies',
                 'careers.vacancies.create' => 'Create vacancies',
@@ -60,11 +70,13 @@ final class Permission
                 'careers.vacancies.delete' => 'Delete vacancies',
                 'careers.vacancies.order' => 'Change vacancy order',
             ],
+
             'Career Applications' => [
                 'careers.applications.view' => 'View applications',
                 'careers.applications.download' => 'Download CV files',
                 'careers.applications.delete' => 'Delete applications',
             ],
+
             'Administrators' => [
                 'admins.view' => 'View administrators',
                 'admins.create' => 'Create administrators',
@@ -79,9 +91,11 @@ final class Permission
     public static function all(): array
     {
         $all = [];
+
         foreach (self::groups() as $permissions) {
             $all += $permissions;
         }
+
         return $all;
     }
 
@@ -96,12 +110,15 @@ final class Permission
     {
         $allowed = array_flip(self::keys());
         $clean = [];
+
         foreach ($permissions as $permission) {
             $key = (string) $permission;
+
             if (isset($allowed[$key])) {
                 $clean[] = $key;
             }
         }
+
         return array_values(array_unique($clean));
     }
 }
