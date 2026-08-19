@@ -26,6 +26,33 @@ $footerPhoneHref = preg_replace(
     '',
     (string) ($footerContact['phone'] ?? '')
 );
+
+/* Load the breadcrumb page name managed from Admin > Page Names. */
+try {
+    $joinCrewPageNameSetting = (
+        new \Gmg\Events\Models\PageBreadcrumb(
+            \Gmg\Events\Core\Database::connection()
+        )
+    )->get('join-crew', 'Join as Crew');
+
+    $joinCrewPageName = trim(
+        (string) (
+            $joinCrewPageNameSetting['page_name']
+            ?? 'Join as Crew'
+        )
+    );
+
+    if ($joinCrewPageName === '') {
+        $joinCrewPageName = 'Join as Crew';
+    }
+} catch (\Throwable $exception) {
+    error_log(
+        'Page name load failed for join-crew: '
+        . $exception->getMessage()
+    );
+
+    $joinCrewPageName = 'Join as Crew';
+}
 ?>
 <!doctype html>
 <html class="no-js gmi-loading-root" lang="en" style="background:#071525;">
@@ -1203,7 +1230,7 @@ body {
     </div>
     <nav class="gmi-nav-buttons" aria-label="Primary navigation">
         <a href="/">Home</a>
-        <a href="about-us.php">About Us</a>
+        <a href="about-us.php">ABOUT US</a>
         <a href="services.php">Services</a>
         <a href="companies.php">Companies</a>
         <a href="events.php">Events</a>
@@ -1214,23 +1241,23 @@ body {
         <span></span><span></span><span></span>
     </button>
     <nav id="gmiNavMobile" class="gmi-nav-mobile" aria-label="Mobile navigation">
-        <a href="/">Home</a>
-        <a href="about-us.php">About Us</a>
-        <a href="services.php">Services</a>
-        <a href="companies.php">Companies</a>
-        <a href="events.php">Events</a>
-        <a href="careers.php" class="gmi-current">Careers</a>
-        <a href="contact-us.php">Contact Us</a>
+        <a href="/">HOME</a>
+        <a href="about-us.php">ABOUT US</a>
+        <a href="services.php">SERVICES</a>
+        <a href="companies.php">COMPANIES</a>
+        <a href="events.php">EVENTS</a>
+        <a href="careers.php" class="gmi-current">CAREERS</a>
+        <a href="contact-us.php">CONTACT US</a>
     </nav>
 </header>
 
 <section class="breadcrumb-section">
     <div class="container">
         <div class="breadcrumb-area">
-            <h2 class="breadcrumb-title reveal">Join as Crew</h2>
+            <h2 class="breadcrumb-title reveal"><?= e($joinCrewPageName) ?></h2>
             <ul class="breadcrumb-ul">
                 <li><a href="/">Home</a></li>
-                <li class="active-breadcrumb">Join as Crew</li>
+                <li class="active-breadcrumb"><?= e($joinCrewPageName) ?></li>
             </ul>
         </div>
     </div>

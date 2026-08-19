@@ -2393,10 +2393,10 @@ body {
     <section class="breadcrumb-section">
         <div class="container">
             <div class="breadcrumb-area">
-                <h2 class="breadcrumb-title reveal">Contact Us</h2>
+                <h2 class="breadcrumb-title reveal" id="contactBreadcrumbTitle">Contact Us</h2>
                 <ul class="breadcrumb-ul">
                     <li><a href="/">Home</a></li>
-                    <li class="active-breadcrumb">Contact Us</li>
+                    <li class="active-breadcrumb" id="contactBreadcrumbActive">Contact Us</li>
                 </ul>
             </div>
         </div>
@@ -3213,6 +3213,75 @@ body {
                 });
         }());
     </script>
+
+
+<script id="gmi-contact-page-name-sync">
+(function () {
+    'use strict';
+
+    fetch('page-names-public.php', {
+        method: 'GET',
+        credentials: 'same-origin',
+        cache: 'no-store',
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+        .then(function (response) {
+            if (!response.ok) {
+                throw new Error(
+                    'Page names endpoint returned ' + response.status
+                );
+            }
+
+            return response.json();
+        })
+        .then(function (payload) {
+            var pageName = '';
+
+            if (
+                payload &&
+                payload.data &&
+                typeof payload.data['contact-us'] === 'string'
+            ) {
+                pageName = payload.data['contact-us'].trim();
+            }
+
+            if (!pageName) {
+                return;
+            }
+
+            var title = document.getElementById(
+                'contactBreadcrumbTitle'
+            );
+
+            var active = document.getElementById(
+                'contactBreadcrumbActive'
+            );
+
+            if (title) {
+                title.textContent = pageName;
+            }
+
+            if (active) {
+                active.textContent = pageName;
+            }
+        })
+        .catch(function (error) {
+            if (window.console && console.warn) {
+                console.warn(
+                    'Contact page name sync failed:',
+                    error
+                );
+            }
+
+            /*
+             * Keep the existing "Contact Us" fallback text
+             * if the endpoint is unavailable.
+             */
+        });
+}());
+</script>
 
 </body>
 </html>

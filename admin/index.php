@@ -17,6 +17,7 @@ use Gmg\Events\Controllers\Admin\DashboardController;
 use Gmg\Events\Controllers\Admin\EventController;
 use Gmg\Events\Controllers\Admin\FooterContactController;
 use Gmg\Events\Controllers\Admin\PartnerController;
+use Gmg\Events\Controllers\Admin\PageBreadcrumbController;
 use Gmg\Events\Core\SchemaGuard;
 
 $action = (string) ($_GET['action'] ?? 'dashboard');
@@ -45,6 +46,11 @@ $routes = [
         'companies-edit' => [CompanyController::class, 'edit'],
 
         'about' => [AboutController::class, 'index'],
+
+        // Central breadcrumb page-name editor
+        'page-names' => [PageBreadcrumbController::class, 'index'],
+        // Backward-compatible alias from the earlier About-only editor
+        'about-breadcrumb' => [PageBreadcrumbController::class, 'index'],
         'about-directors' => [AboutController::class, 'directors'],
         'about-directors-create' => [AboutController::class, 'directorsCreate'],
         'about-directors-edit' => [AboutController::class, 'directorsEdit'],
@@ -90,6 +96,11 @@ $routes = [
         'companies-update' => [CompanyController::class, 'update'],
         'companies-delete' => [CompanyController::class, 'delete'],
         'companies-order' => [CompanyController::class, 'order'],
+
+        // Central breadcrumb page-name editor
+        'page-names-update' => [PageBreadcrumbController::class, 'update'],
+        // Backward-compatible alias
+        'about-breadcrumb-update' => [PageBreadcrumbController::class, 'update'],
 
         'about-directors-store' => [AboutController::class, 'directorsStore'],
         'about-directors-update' => [AboutController::class, 'directorsUpdate'],
@@ -148,6 +159,9 @@ try {
 
         str_starts_with($action, 'companies')
             => array_merge($baseTables, ['website_companies']),
+
+        (str_starts_with($action, 'page-names') || str_starts_with($action, 'about-breadcrumb'))
+            => array_merge($baseTables, ['page_breadcrumb_settings']),
 
         str_starts_with($action, 'about')
             => array_merge($baseTables, ['about_members', 'about_teams']),

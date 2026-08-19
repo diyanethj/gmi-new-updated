@@ -1,6 +1,7 @@
 <?php
 use Gmg\Events\Core\Database;
 use Gmg\Events\Models\FooterContact;
+use Gmg\Events\Models\PageBreadcrumb;
 
 /* Load the same admin-managed footer contact settings used by home.php. */
 try {
@@ -21,6 +22,28 @@ try {
 }
 
 $footerPhoneHref = preg_replace('/[^0-9+]/', '', (string) $footerContact['phone']);
+
+/* Load the breadcrumb page name managed from Admin > Page Names. */
+try {
+    $aboutPageNameSetting = (
+        new PageBreadcrumb(Database::connection())
+    )->get('about-us', 'About Us');
+
+    $aboutPageName = trim(
+        (string) ($aboutPageNameSetting['page_name'] ?? 'About Us')
+    );
+
+    if ($aboutPageName === '') {
+        $aboutPageName = 'About Us';
+    }
+} catch (\Throwable $exception) {
+    error_log(
+        'Page name load failed for about-us: '
+        . $exception->getMessage()
+    );
+
+    $aboutPageName = 'About Us';
+}
 ?>
 <!DOCTYPE html>
 <html class="no-js gmi-loading-root" lang="en" style="background:#071525;">
@@ -1768,13 +1791,13 @@ body {
 <section class="breadcrumb-section">
 <div class="container">
 <div class="breadcrumb-area">
-<h2 class="breadcrumb-title reveal">About Us</h2>
+<h2 class="breadcrumb-title reveal"><?= e($aboutPageName) ?></h2>
 <ul class="breadcrumb-ul">
 <li>
 <a href="/">Home</a>
 </li>
 <li class="active-breadcrumb">
-                        About Us
+                        <?= e($aboutPageName) ?>
                     </li>
 </ul>
 </div>

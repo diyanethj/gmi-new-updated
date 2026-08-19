@@ -39,6 +39,11 @@ final class Permission
                 'companies.order' => 'Change company order',
             ],
 
+            'Page Names' => [
+                'about.page.view' => 'View editable page names',
+                'about.page.edit' => 'Edit breadcrumb page names',
+            ],
+
             'Board of Directors' => [
                 'about.directors.view' => 'View directors',
                 'about.directors.create' => 'Create directors',

@@ -26,6 +26,30 @@ $footerPhoneHref = preg_replace(
     '',
     (string) ($footerContact['phone'] ?? '')
 );
+
+/* Load the breadcrumb page name managed from Admin > Page Names. */
+try {
+    $eventsPageNameSetting = (
+        new \Gmg\Events\Models\PageBreadcrumb(
+            \Gmg\Events\Core\Database::connection()
+        )
+    )->get('events', 'Events');
+
+    $eventsPageName = trim(
+        (string) ($eventsPageNameSetting['page_name'] ?? 'Events')
+    );
+
+    if ($eventsPageName === '') {
+        $eventsPageName = 'Events';
+    }
+} catch (\Throwable $exception) {
+    error_log(
+        'Page name load failed for events: '
+        . $exception->getMessage()
+    );
+
+    $eventsPageName = 'Events';
+}
 ?>
 <!DOCTYPE html>
 
@@ -811,7 +835,7 @@ body {
 <a href="contact-us.php">CONTACT US</a>
 </nav>
 </header>
-<section class="breadcrumb-section"><div class="container"><div class="breadcrumb-area"><div class="breadcrumb-eyebrow"><i class="fas fa-calendar-check"></i> Global Marine Group</div><br/><h1 class="breadcrumb-title">Events</h1><ul class="breadcrumb-ul"><li><a href="/">Home</a></li><li aria-current="page">Events</li></ul></div></div></section>
+<section class="breadcrumb-section"><div class="container"><div class="breadcrumb-area"><div class="breadcrumb-eyebrow"><i class="fas fa-calendar-check"></i> Global Marine Group</div><br/><h1 class="breadcrumb-title"><?= e($eventsPageName) ?></h1><ul class="breadcrumb-ul"><li><a href="/">Home</a></li><li aria-current="page"><?= e($eventsPageName) ?></li></ul></div></div></section>
 <section class="events-section">
 <div class="container">
 <div class="section-heading">

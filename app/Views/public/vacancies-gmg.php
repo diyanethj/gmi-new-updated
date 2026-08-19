@@ -26,6 +26,33 @@ $footerPhoneHref = preg_replace(
     '',
     (string) ($footerContact['phone'] ?? '')
 );
+
+/* Load the breadcrumb page name managed from Admin > Page Names. */
+try {
+    $joinEmployeePageNameSetting = (
+        new \Gmg\Events\Models\PageBreadcrumb(
+            \Gmg\Events\Core\Database::connection()
+        )
+    )->get('join-employee', 'Join as Employee');
+
+    $joinEmployeePageName = trim(
+        (string) (
+            $joinEmployeePageNameSetting['page_name']
+            ?? 'Join as Employee'
+        )
+    );
+
+    if ($joinEmployeePageName === '') {
+        $joinEmployeePageName = 'Join as Employee';
+    }
+} catch (\Throwable $exception) {
+    error_log(
+        'Page name load failed for join-employee: '
+        . $exception->getMessage()
+    );
+
+    $joinEmployeePageName = 'Join as Employee';
+}
 ?>
 <!doctype html>
 <html class="no-js gmi-loading-root" lang="en" style="background:#071525;">
@@ -1227,10 +1254,10 @@ body {
 <section class="breadcrumb-section">
     <div class="container">
         <div class="breadcrumb-area">
-            <h2 class="breadcrumb-title reveal">Join as Employee</h2>
+            <h2 class="breadcrumb-title reveal"><?= e($joinEmployeePageName) ?></h2>
             <ul class="breadcrumb-ul">
                 <li><a href="/">Home</a></li>
-                <li class="active-breadcrumb">Join as Employee</li>
+                <li class="active-breadcrumb"><?= e($joinEmployeePageName) ?></li>
             </ul>
         </div>
     </div>

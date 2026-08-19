@@ -26,6 +26,30 @@ $footerPhoneHref = preg_replace(
     '',
     (string) ($footerContact['phone'] ?? '')
 );
+
+/* Load the breadcrumb page name managed from Admin > Page Names. */
+try {
+    $companiesPageNameSetting = (
+        new \Gmg\Events\Models\PageBreadcrumb(
+            \Gmg\Events\Core\Database::connection()
+        )
+    )->get('companies', 'Our Companies');
+
+    $companiesPageName = trim(
+        (string) ($companiesPageNameSetting['page_name'] ?? 'Our Companies')
+    );
+
+    if ($companiesPageName === '') {
+        $companiesPageName = 'Our Companies';
+    }
+} catch (\Throwable $exception) {
+    error_log(
+        'Page name load failed for companies: '
+        . $exception->getMessage()
+    );
+
+    $companiesPageName = 'Our Companies';
+}
 ?>
 <!doctype html>
 <html class="no-js gmi-loading" lang="en">
@@ -840,10 +864,10 @@ body {
     <div class="container">
         <div class="breadcrumb-area">
             <div class="breadcrumb-eyebrow"><i class="fas fa-building"></i> Global Marine Group</div><br>
-            <h1 class="breadcrumb-title">Our Companies</h1>
+            <h1 class="breadcrumb-title"><?= e($companiesPageName) ?></h1>
             <ul class="breadcrumb-ul">
                 <li><a href="/">Home</a></li>
-                <li aria-current="page">Companies</li>
+                <li aria-current="page"><?= e($companiesPageName) ?></li>
             </ul>
         </div>
     </div>
