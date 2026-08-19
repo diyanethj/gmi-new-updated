@@ -806,13 +806,13 @@ body {
     </div>
 
     <nav class="gmi-nav-buttons" aria-label="Primary navigation">
-        <a href="/">Home</a>
-        <a href="about-us.php">About Us</a>
-        <a href="services.php">Services</a>
-        <a href="companies.php">Companies</a>
-        <a href="events.php" class="gmi-current" aria-current="page">Events</a>
-        <a href="careers.php">Careers</a>
-        <a href="contact-us.php">Contact Us</a>
+        <a href="/">HOME</a>
+        <a href="about-us.php">ABOUT US</a>
+        <a href="services.php">SERVICES</a>
+        <a href="companies.php">COMPANIES</a>
+        <a href="events.php" class="gmi-current" aria-current="page">EVENTS</a>
+        <a href="careers.php">CAREERS</a>
+        <a href="contact-us.php">CONTACT US</a>
     </nav>
 
     <button type="button" class="gmi-hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation" aria-controls="gmiNavMobile" aria-expanded="false">
@@ -820,17 +820,17 @@ body {
     </button>
 
     <nav id="gmiNavMobile" class="gmi-nav-mobile" aria-label="Mobile navigation">
-        <a href="/">Home</a>
-        <a href="about-us.php">About Us</a>
-        <a href="services.php">Services</a>
-        <a href="companies.php">Companies</a>
-        <a href="events.php" class="gmi-current" aria-current="page">Events</a>
-        <a href="careers.php">Careers</a>
-        <a href="contact-us.php">Contact Us</a>
+        <a href="/">HOME</a>
+        <a href="about-us.php">ABOUT US</a>
+        <a href="services.php">SERVICES</a>
+        <a href="companies.php">COMPANIES</a>
+        <a href="events.php" class="gmi-current" aria-current="page">EVENTS</a>
+        <a href="careers.php">CAREERS</a>
+        <a href="contact-us.php">CONTACT US</a>
     </nav>
 </header>
 
-<section class="breadcrumb-section"><div class="container"><div class="breadcrumb-area"><div class="breadcrumb-eyebrow"><i class="fas fa-calendar-check"></i> Global Marine Group</div><br/><h1 class="breadcrumb-title">Event Details</h1><ul class="breadcrumb-ul"><li><a href="/">Home</a></li><li aria-current="page">Event Details</li></ul></div></div></section>
+<section class="breadcrumb-section"><div class="container"><div class="breadcrumb-area"><div class="breadcrumb-eyebrow"><i class="fas fa-calendar-check"></i> Global Marine Group</div><br/><h1 class="breadcrumb-title"><?php echo e($eventTitle); ?></h1><ul class="breadcrumb-ul"><li><a href="/">Home</a></li><li aria-current="page"><?php echo e($eventTitle); ?></li></ul></div></div></section>
 
 <main>
     <section class="event-details-section">

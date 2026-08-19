@@ -1229,25 +1229,25 @@ body {
         </a>
     </div>
     <nav class="gmi-nav-buttons" aria-label="Primary navigation">
-        <a href="/">Home</a>
-        <a href="about-us.php">About Us</a>
-        <a href="services.php">Services</a>
-        <a href="companies.php">Companies</a>
-        <a href="events.php">Events</a>
-        <a href="careers.php" class="gmi-current">Careers</a>
-        <a href="contact-us.php">Contact Us</a>
+        <a href="/">HOME</a>
+        <a href="about-us.php">ABOUT US</a>
+        <a href="services.php">SERVICES</a>
+        <a href="companies.php">COMPANIES</a>
+        <a href="events.php">EVENTS</a>
+        <a href="careers.php" class="gmi-current">CAREERS</a>
+        <a href="contact-us.php">CONTACT US</a>
     </nav>
     <button type="button" class="gmi-hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation" aria-controls="gmiNavMobile" aria-expanded="false">
         <span></span><span></span><span></span>
     </button>
     <nav id="gmiNavMobile" class="gmi-nav-mobile" aria-label="Mobile navigation">
-        <a href="/">Home</a>
-        <a href="about-us.php">About Us</a>
-        <a href="services.php">Services</a>
-        <a href="companies.php">Companies</a>
-        <a href="events.php">Events</a>
-        <a href="careers.php" class="gmi-current">Careers</a>
-        <a href="contact-us.php">Contact Us</a>
+        <a href="/">HOME</a>
+        <a href="about-us.php">ABOUT US</a>
+        <a href="services.php">SERVICES</a>
+        <a href="companies.php">COMPANIES</a>
+        <a href="events.php">EVENTS</a>
+        <a href="careers.php" class="gmi-current">CAREERS</a>
+        <a href="contact-us.php">CONTACT US</a>
     </nav>
 </header>
 
